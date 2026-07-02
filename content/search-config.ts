@@ -1,4 +1,5 @@
-import { powiatyList } from "./powiaty";
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
 
 export interface SearchFormConfig {
   locationLabel: string;
@@ -10,15 +11,17 @@ export interface SearchFormConfig {
   submitButtonLabel: string;
 }
 
-export const searchFormConfig: SearchFormConfig = {
-  locationLabel: "Lokalizacja",
-  locationOptions: [
-    "Cała oferta",
-    ...[...powiatyList].sort((a, b) => a.order - b.order).map((p) => p.name),
-  ],
-  propertyTypeLabel: "Typ nieruchomości",
-  propertyTypeOptions: ["Dowolny", "Dom", "Mieszkanie", "Działka", "Lokal"],
-  priceLabel: "Cena do",
-  priceThresholds: ["Bez limitu", "500 000 zł", "800 000 zł", "1 200 000 zł"],
-  submitButtonLabel: "Szukaj",
-};
+export type SearchConfigBase = Omit<SearchFormConfig, "locationOptions">;
+
+const query = groq`*[_type == "searchConfig"][0]{
+  locationLabel,
+  propertyTypeLabel,
+  "propertyTypeOptions": coalesce(propertyTypeOptions, []),
+  priceLabel,
+  "priceThresholds": coalesce(priceThresholds, []),
+  submitButtonLabel
+}`;
+
+export async function getSearchConfigBase(): Promise<SearchConfigBase> {
+  return client.fetch(query, {}, { next: { tags: ["searchConfig"], revalidate: 3600 } });
+}

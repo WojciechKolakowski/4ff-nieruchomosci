@@ -1,22 +1,42 @@
-import { globalSettings } from "./global-settings";
-import { heroContent } from "./hero";
-import { searchFormConfig } from "./search-config";
-import { properties } from "./properties";
-import { whyUsContent } from "./why-us";
-import { vipProgramContent } from "./vip-program";
-import { testimonials } from "./testimonials";
-import { powiatyList } from "./powiaty";
-import { footerContent } from "./footer";
+import { getGlobalSettings } from "./global-settings";
+import { getHeroContent } from "./hero";
+import { getSearchConfigBase } from "./search-config";
+import { getProperties } from "./properties";
+import { getWhyUsContent } from "./why-us";
+import { getVipProgramContent } from "./vip-program";
+import { getTestimonials } from "./testimonials";
+import { getPowiatyList } from "./powiaty";
+import { getFooterContent } from "./footer";
 
-export const homepageContent = {
-  global: globalSettings,
-  hero: heroContent,
-  searchConfig: searchFormConfig,
-  featuredProperties: properties.filter((p) => p.status === "public"),
-  whyUs: whyUsContent,
-  vip: vipProgramContent,
-  vipProperties: properties.filter((p) => p.status === "vip"),
-  testimonials: testimonials.filter((t) => t.visibleOnHomepage),
-  powiaty: [...powiatyList].sort((a, b) => a.order - b.order),
-  footer: footerContent,
-};
+export async function getHomepageContent() {
+  const [global, hero, searchConfigBase, properties, whyUs, vip, testimonials, powiaty, footer] =
+    await Promise.all([
+      getGlobalSettings(),
+      getHeroContent(),
+      getSearchConfigBase(),
+      getProperties(),
+      getWhyUsContent(),
+      getVipProgramContent(),
+      getTestimonials(),
+      getPowiatyList(),
+      getFooterContent(),
+    ]);
+
+  const searchConfig = {
+    ...searchConfigBase,
+    locationOptions: ["Cała oferta", ...powiaty.map((p) => p.name)],
+  };
+
+  return {
+    global,
+    hero,
+    searchConfig,
+    featuredProperties: properties.filter((p) => p.status === "public"),
+    whyUs,
+    vip,
+    vipProperties: properties.filter((p) => p.status === "vip"),
+    testimonials,
+    powiaty,
+    footer,
+  };
+}

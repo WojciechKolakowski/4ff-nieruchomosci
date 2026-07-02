@@ -1,3 +1,5 @@
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
 import type { CmsImage, CmsLink } from "./types";
 
 export interface TrustBarItem {
@@ -23,36 +25,28 @@ export interface GlobalSettings {
   trustBarItems: TrustBarItem[];
 }
 
-const logo: CmsImage = {
-  src: "/logo.png",
-  alt: "4FF Nieruchomości Kołakowscy",
-  width: 140,
-  height: 140,
-};
+const imageProjection = groq`{
+  "src": asset->url,
+  "alt": coalesce(alt, ""),
+  "width": asset->metadata.dimensions.width,
+  "height": asset->metadata.dimensions.height
+}`;
 
-export const globalSettings: GlobalSettings = {
-  logo: { light: logo, dark: logo },
-  phone: "+48 505 644 440",
-  email: "biuro@4ffnieruchomosci.pl",
-  officeAddress: "4FF Sp. z o.o. · NIP 731 207 91 33",
-  socialLinks: {
-    facebook: "#",
-    instagram: "#",
-    youtube: "#",
+const query = groq`*[_type == "globalSettings"][0]{
+  "logo": {
+    "light": logoLight${imageProjection},
+    "dark": logoDark${imageProjection}
   },
-  ctaValuationButtonLabel: "Bezpłatna wycena",
-  loginButtonLabel: "Zaloguj się",
-  navLinks: [
-    { label: "Nieruchomości", href: "#oferty" },
-    { label: "Wcześniejszy dostęp", href: "#vip" },
-    { label: "O nas", href: "#dlaczego" },
-    { label: "Opinie", href: "#opinie" },
-    { label: "Kontakt", href: "#kontakt" },
-  ],
-  trustBarItems: [
-    { icon: "☰", before: "Licencja pośrednika ", strong: "PFRN" },
-    { icon: "★", strong: "4,9/5", after: " średnia ocena klientów" },
-    { icon: "🔒", before: "Bezpieczeństwo prawne ", strong: "na każdym etapie" },
-    { icon: "⏰", before: "Kontakt ", strong: "7 dni w tygodniu" },
-  ],
-};
+  phone,
+  email,
+  officeAddress,
+  socialLinks,
+  ctaValuationButtonLabel,
+  loginButtonLabel,
+  "navLinks": coalesce(navLinks[]{label, href}, []),
+  "trustBarItems": coalesce(trustBarItems[]{icon, before, strong, after}, [])
+}`;
+
+export async function getGlobalSettings(): Promise<GlobalSettings> {
+  return client.fetch(query, {}, { next: { tags: ["globalSettings"], revalidate: 3600 } });
+}

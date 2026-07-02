@@ -1,3 +1,6 @@
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+
 export interface VipStep {
   number: string;
   description: string;
@@ -11,15 +14,14 @@ export interface VipProgramContent {
   ctaButtonLabel: string;
 }
 
-export const vipProgramContent: VipProgramContent = {
-  eyebrow: "Program 4FF VIP",
-  heading: "Zobacz nowe oferty 7 dni przed wszystkimi",
-  description:
-    "Każda nowa nieruchomość trafia najpierw do zalogowanych użytkowników. Dopiero po 7 dniach staje się widoczna publicznie i pojawia się na portalach ogłoszeniowych.",
-  steps: [
-    { number: "01", description: "Załóż darmowe konto w mniej niż minutę." },
-    { number: "02", description: "Przeglądaj nowości zanim trafią do internetu." },
-    { number: "03", description: "Umów prezentację jako pierwszy zainteresowany." },
-  ],
-  ctaButtonLabel: "Załóż bezpłatne konto",
-};
+const query = groq`*[_type == "vipProgram"][0]{
+  eyebrow,
+  heading,
+  description,
+  "steps": coalesce(steps, []),
+  ctaButtonLabel
+}`;
+
+export async function getVipProgramContent(): Promise<VipProgramContent> {
+  return client.fetch(query, {}, { next: { tags: ["vipProgram"], revalidate: 3600 } });
+}

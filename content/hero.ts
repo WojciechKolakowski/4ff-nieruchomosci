@@ -1,12 +1,15 @@
-import type { CmsLink } from "./types";
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+import type { CmsImage, CmsLink } from "./types";
+import { placeholderGradientFor } from "./placeholders";
 
 export interface HeroSlide {
   type: "image" | "video";
-  order: number;
   tag: string;
-  placeholderLabel: string;
-  placeholderGradient: string;
   link?: string;
+  image?: CmsImage;
+  videoUrl?: string;
+  placeholderGradient: string;
 }
 
 export interface HeroStat {
@@ -42,69 +45,57 @@ export interface HeroContent {
   leadForm: LeadFormContent;
 }
 
-export const heroContent: HeroContent = {
-  eyebrow: "Biuro nieruchomości · Łódzkie i Lubelskie",
-  headlineBefore: "Twój dom, Twoja",
-  highlightedWord: "swoboda",
-  headlineAfter: "nasza odpowiedzialność",
-  description:
-    "Od pierwszej prezentacji po podpis u notariusza — prowadzimy Cię przez sprzedaż lub zakup nieruchomości bez stresu, papierologii i niedomówień.",
-  primaryButton: { label: "Zobacz nieruchomości", href: "#oferty" },
-  secondaryButton: { label: "Umów bezpłatną konsultację", href: "#lead" },
-  stats: [
-    { value: "12+", label: "lat na rynku" },
-    { value: "200+", label: "zrealizowanych transakcji" },
-    { value: "10", label: "obsługiwanych powiatów" },
-  ],
-  slides: [
-    {
-      type: "image",
-      order: 1,
-      tag: "Nieruchomość premium",
-      placeholderLabel: "[ zdjęcie 1 — dom „Swoboda Premium” ]",
-      placeholderGradient: "linear-gradient(150deg,#5C6740,#3A3F27 60%,#262A18)",
-    },
-    {
-      type: "image",
-      order: 2,
-      tag: "Rynek pierwotny",
-      placeholderLabel: "[ zdjęcie 2 — apartamenty Pod77 ]",
-      placeholderGradient: "linear-gradient(150deg,#8B9264,#4F5636)",
-    },
-    {
-      type: "video",
-      order: 3,
-      tag: "Wideo",
-      placeholderLabel: "[ miejsce na wideo powitalne biura ]",
-      placeholderGradient: "linear-gradient(150deg,#2A2E1C,#141410)",
-    },
-    {
-      type: "image",
-      order: 4,
-      tag: "Rynek wtórny",
-      placeholderLabel: "[ zdjęcie 3 — komfortowe siedlisko ]",
-      placeholderGradient: "linear-gradient(150deg,#7C8A8F,#33393B)",
-    },
-  ],
-  leadForm: {
-    heading: "Bezpłatna wycena nieruchomości",
-    subheading: "Odezwiemy się w ciągu 24h z realną wyceną i planem działania.",
-    nameLabel: "Imię i nazwisko",
-    namePlaceholder: "Jan Kowalski",
-    phoneLabel: "Telefon",
-    phonePlaceholder: "+48 500 000 000",
-    interestLabel: "Czego szukasz?",
-    interestOptions: [
-      "Chcę sprzedać nieruchomość",
-      "Chcę kupić nieruchomość",
-      "Wycena / konsultacja",
-    ],
-    consentRequiredLabel:
-      "Wyrażam zgodę na przetwarzanie danych osobowych w celu kontaktu w sprawie zapytania (wymagane). Zapoznałem się z Polityką prywatności.",
-    consentMarketingLabel:
-      "Chcę otrzymywać oferty i informacje marketingowe drogą elektroniczną (opcjonalnie).",
-    submitButtonLabel: "Wyślij zapytanie",
-    rodoNote:
-      "Administratorem danych jest 4FF Sp. z o.o. Dane przetwarzane są zgodnie z RODO wyłącznie w celu obsługi zapytania i nie są udostępniane podmiotom trzecim bez Twojej zgody.",
-  },
+const imageProjection = groq`{
+  "src": asset->url,
+  "alt": coalesce(alt, ""),
+  "width": asset->metadata.dimensions.width,
+  "height": asset->metadata.dimensions.height
+}`;
+
+const query = groq`*[_type == "hero"][0]{
+  eyebrow,
+  headlineBefore,
+  highlightedWord,
+  headlineAfter,
+  description,
+  primaryButton,
+  secondaryButton,
+  "stats": coalesce(stats, []),
+  "slides": coalesce(slides[]{
+    type,
+    tag,
+    link,
+    "image": image${imageProjection},
+    "videoUrl": video
+  }, []),
+  "leadForm": {
+    "heading": leadForm.heading,
+    "subheading": leadForm.subheading,
+    "nameLabel": leadForm.nameLabel,
+    "namePlaceholder": leadForm.namePlaceholder,
+    "phoneLabel": leadForm.phoneLabel,
+    "phonePlaceholder": leadForm.phonePlaceholder,
+    "interestLabel": leadForm.interestLabel,
+    "interestOptions": coalesce(leadForm.interestOptions, []),
+    "consentRequiredLabel": leadForm.consentRequiredLabel,
+    "consentMarketingLabel": leadForm.consentMarketingLabel,
+    "submitButtonLabel": leadForm.submitButtonLabel,
+    "rodoNote": leadForm.rodoNote
+  }
+}`;
+
+type RawHero = Omit<HeroContent, "slides"> & {
+  slides: Array<Omit<HeroSlide, "placeholderGradient">>;
 };
+
+export async function getHeroContent(): Promise<HeroContent> {
+  const raw = await client.fetch<RawHero>(query, {}, { next: { tags: ["hero"], revalidate: 3600 } });
+
+  return {
+    ...raw,
+    slides: raw.slides.map((slide, index) => ({
+      ...slide,
+      placeholderGradient: placeholderGradientFor(index),
+    })),
+  };
+}
