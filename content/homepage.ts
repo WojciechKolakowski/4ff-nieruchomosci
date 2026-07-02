@@ -7,20 +7,32 @@ import { getVipProgramContent } from "./vip-program";
 import { getTestimonials } from "./testimonials";
 import { getPowiatyList } from "./powiaty";
 import { getFooterContent } from "./footer";
+import { getServiceAreaContent } from "./service-area";
 
 export async function getHomepageContent() {
-  const [global, hero, searchConfigBase, properties, whyUs, vip, testimonials, powiaty, footer] =
-    await Promise.all([
-      getGlobalSettings(),
-      getHeroContent(),
-      getSearchConfigBase(),
-      getProperties(),
-      getWhyUsContent(),
-      getVipProgramContent(),
-      getTestimonials(),
-      getPowiatyList(),
-      getFooterContent(),
-    ]);
+  const [
+    global,
+    hero,
+    searchConfigBase,
+    properties,
+    whyUs,
+    vip,
+    testimonials,
+    powiaty,
+    footer,
+    serviceArea,
+  ] = await Promise.all([
+    getGlobalSettings(),
+    getHeroContent(),
+    getSearchConfigBase(),
+    getProperties(),
+    getWhyUsContent(),
+    getVipProgramContent(),
+    getTestimonials(),
+    getPowiatyList(),
+    getFooterContent(),
+    getServiceAreaContent(),
+  ]);
 
   const searchConfig = {
     ...searchConfigBase,
@@ -38,5 +50,6 @@ export async function getHomepageContent() {
     testimonials,
     powiaty,
     footer,
+    serviceArea,
   };
 }

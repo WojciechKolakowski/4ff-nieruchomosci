@@ -1,13 +1,26 @@
 import type { Powiat } from "@/content/powiaty";
+import type { ServiceAreaContent } from "@/content/service-area";
 
-export function ServiceAreaRibbon({ powiaty }: { powiaty: Powiat[] }) {
+function capitalize(text: string) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+export function ServiceAreaRibbon({
+  content,
+  powiaty,
+}: {
+  content: ServiceAreaContent;
+  powiaty: Powiat[];
+}) {
+  const voivodeships = [...new Set(powiaty.map((p) => p.voivodeship))];
+
   return (
     <section className="area" id="obszar">
       <div className="wrap">
         <div className="sec-head">
-          <span className="eyebrow on-dark">Zasięg działania</span>
-          <h2>Dwa regiony, jedno biuro zaufania</h2>
-          <p>Obsługujemy transakcje nieruchomościowe w powiatach województwa łódzkiego i lubelskiego.</p>
+          <span className="eyebrow on-dark">{content.eyebrow}</span>
+          <h2>{content.heading}</h2>
+          <p>{content.description}</p>
         </div>
         <div className="ribbon">
           <div className="ribbon-track">
@@ -20,8 +33,9 @@ export function ServiceAreaRibbon({ powiaty }: { powiaty: Powiat[] }) {
           </div>
         </div>
         <div className="voivod-labels">
-          <span>Woj. Łódzkie</span>
-          <span>Woj. Lubelskie</span>
+          {voivodeships.map((voivodeship) => (
+            <span key={voivodeship}>Woj. {capitalize(voivodeship)}</span>
+          ))}
         </div>
       </div>
     </section>

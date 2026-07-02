@@ -194,6 +194,16 @@ async function seed() {
     cookieRejectLabel: "Tylko niezbędne",
   });
 
+  console.log("Seeding serviceArea...");
+  await client.createOrReplace({
+    _id: "serviceArea",
+    _type: "serviceArea",
+    eyebrow: "Zasięg działania",
+    heading: "Dwa regiony, jedno biuro zaufania",
+    description:
+      "Obsługujemy transakcje nieruchomościowe w powiatach województwa łódzkiego i lubelskiego.",
+  });
+
   console.log("Seeding powiaty...");
   const powiaty: Array<{ id: string; name: string; voivodeship: string; order: number }> = [
     { id: "powiat-pabianicki", name: "Powiat Pabianicki", voivodeship: "łódzkie", order: 1 },

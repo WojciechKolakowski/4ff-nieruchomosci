@@ -8,6 +8,7 @@ const singletonLabels: Record<string, string> = {
   whyUs: 'Sekcja "Dlaczego my"',
   vipProgram: "Program 4FF VIP",
   footer: "Stopka",
+  serviceArea: "Obszar działania",
 };
 
 export const structure: StructureResolver = (S) =>

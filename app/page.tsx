@@ -25,7 +25,7 @@ export default async function Home() {
       <WhyUs content={content.whyUs} />
       <CtaBand />
       <Testimonials testimonials={content.testimonials} />
-      <ServiceAreaRibbon powiaty={content.powiaty} />
+      <ServiceAreaRibbon content={content.serviceArea} powiaty={content.powiaty} />
       <Footer global={content.global} content={content.footer} />
       <CookieBar content={content.footer} />
       <LoginModal />

@@ -7,6 +7,7 @@ import { searchConfig } from "./singletons/searchConfig";
 import { whyUs } from "./singletons/whyUs";
 import { vipProgram } from "./singletons/vipProgram";
 import { footer } from "./singletons/footer";
+import { serviceArea } from "./singletons/serviceArea";
 import { property } from "./documents/property";
 import { testimonial } from "./documents/testimonial";
 import { powiat } from "./documents/powiat";
@@ -19,6 +20,7 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   whyUs,
   vipProgram,
   footer,
+  serviceArea,
   property,
   testimonial,
   powiat,
@@ -31,4 +33,5 @@ export const singletonTypeNames = [
   "whyUs",
   "vipProgram",
   "footer",
+  "serviceArea",
 ];
