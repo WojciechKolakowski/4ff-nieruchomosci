@@ -62,6 +62,15 @@ export const globalSettings = defineType({
             { name: "strong", title: "Tekst wyróżniony", type: "string" },
             { name: "after", title: "Tekst po", type: "string" },
           ],
+          preview: {
+            select: { icon: "icon", before: "before", strong: "strong", after: "after" },
+            prepare({ icon, before, strong, after }) {
+              return {
+                title: [before, strong, after].filter(Boolean).join("") || "Pozycja paska zaufania",
+                subtitle: icon,
+              };
+            },
+          },
         },
       ],
     }),
