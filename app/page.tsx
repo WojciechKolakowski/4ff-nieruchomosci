@@ -1,4 +1,4 @@
-import { homepageContent } from "@/content/homepage";
+import { getHomepageContent } from "@/content/homepage";
 import { Header } from "@/components/home/Header";
 import { Hero } from "@/components/home/Hero";
 import { TrustBar } from "@/components/home/TrustBar";
@@ -12,13 +12,13 @@ import { Footer } from "@/components/home/Footer";
 import { CookieBar } from "@/components/home/CookieBar";
 import { LoginModal } from "@/components/home/LoginModal";
 
-export default function Home() {
-  const content = homepageContent;
+export default async function Home() {
+  const content = await getHomepageContent();
 
   return (
     <>
-      <Header />
-      <Hero content={content.hero} />
+      <Header global={content.global} />
+      <Hero content={content.hero} searchConfig={content.searchConfig} />
       <TrustBar items={content.global.trustBarItems} />
       <FeaturedProperties properties={content.featuredProperties} />
       <VipSection content={content.vip} vipProperties={content.vipProperties} />

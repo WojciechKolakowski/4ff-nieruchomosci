@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import type { HeroSlide } from "@/content/hero";
+import { PLACEHOLDER_LABEL } from "@/content/placeholders";
 
 export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
   const [index, setIndex] = useState(0);
@@ -27,8 +29,18 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
           <div
             key={i}
             className={slide.type === "video" ? "slide slide-video" : "slide"}
-            style={{ background: slide.placeholderGradient }}
+            style={slide.image ? undefined : { background: slide.placeholderGradient }}
           >
+            {slide.image && (
+              <Image
+                src={slide.image.src}
+                alt={slide.image.alt || slide.tag}
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="100vw"
+                priority={i === 0}
+              />
+            )}
             <span className="ph-tag">{slide.tag}</span>
             {slide.type === "video" && (
               <button
@@ -43,7 +55,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 ▶
               </button>
             )}
-            <span className="ph-label">{slide.placeholderLabel}</span>
+            {!slide.image && <span className="ph-label">{PLACEHOLDER_LABEL}</span>}
           </div>
         ))}
       </div>

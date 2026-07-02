@@ -1,6 +1,6 @@
-import { searchFormConfig } from "@/content/search-config";
+import type { SearchFormConfig } from "@/content/search-config";
 
-export function SearchBar() {
+export function SearchBar({ config }: { config: SearchFormConfig }) {
   const {
     locationLabel,
     locationOptions,
@@ -9,7 +9,7 @@ export function SearchBar() {
     priceLabel,
     priceThresholds,
     submitButtonLabel,
-  } = searchFormConfig;
+  } = config;
 
   return (
     <div className="search-bar">

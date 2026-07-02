@@ -1,9 +1,16 @@
 import type { HeroContent } from "@/content/hero";
+import type { SearchFormConfig } from "@/content/search-config";
 import { HeroCarousel } from "./HeroCarousel";
 import { SearchBar } from "./SearchBar";
 import { LeadForm } from "./LeadForm";
 
-export function Hero({ content }: { content: HeroContent }) {
+export function Hero({
+  content,
+  searchConfig,
+}: {
+  content: HeroContent;
+  searchConfig: SearchFormConfig;
+}) {
   return (
     <section className="hero">
       <div className="hero-copy">
@@ -34,7 +41,7 @@ export function Hero({ content }: { content: HeroContent }) {
       <HeroCarousel slides={content.slides} />
 
       <div className="wrap">
-        <SearchBar />
+        <SearchBar config={searchConfig} />
       </div>
 
       <LeadForm content={content.leadForm} />

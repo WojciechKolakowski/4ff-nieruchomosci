@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { globalSettings } from "@/content/global-settings";
+import type { GlobalSettings } from "@/content/global-settings";
 import { OpenLoginModalButton } from "./OpenLoginModalButton";
 
-export function Header() {
-  const { logo, navLinks, phone, loginButtonLabel, ctaValuationButtonLabel } = globalSettings;
+export function Header({ global }: { global: GlobalSettings }) {
+  const { logo, navLinks, phone, loginButtonLabel, ctaValuationButtonLabel } = global;
   const [phonePrefix, ...rest] = phone.split(" ");
   const phoneNumber = rest.join(" ");
 
