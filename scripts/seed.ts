@@ -34,17 +34,17 @@ async function seed() {
     ctaValuationButtonLabel: "Bezpłatna wycena",
     loginButtonLabel: "Zaloguj się",
     navLinks: [
-      { _type: "link", label: "Nieruchomości", href: "#oferty" },
-      { _type: "link", label: "Wcześniejszy dostęp", href: "#vip" },
-      { _type: "link", label: "O nas", href: "#dlaczego" },
-      { _type: "link", label: "Opinie", href: "#opinie" },
-      { _type: "link", label: "Kontakt", href: "#kontakt" },
+      { _type: "link", _key: "nav0", label: "Nieruchomości", href: "#oferty" },
+      { _type: "link", _key: "nav1", label: "Wcześniejszy dostęp", href: "#vip" },
+      { _type: "link", _key: "nav2", label: "O nas", href: "#dlaczego" },
+      { _type: "link", _key: "nav3", label: "Opinie", href: "#opinie" },
+      { _type: "link", _key: "nav4", label: "Kontakt", href: "#kontakt" },
     ],
     trustBarItems: [
-      { _type: "trustBarItem", icon: "☰", before: "Licencja pośrednika ", strong: "PFRN" },
-      { _type: "trustBarItem", icon: "★", strong: "4,9/5", after: " średnia ocena klientów" },
-      { _type: "trustBarItem", icon: "🔒", before: "Bezpieczeństwo prawne ", strong: "na każdym etapie" },
-      { _type: "trustBarItem", icon: "⏰", before: "Kontakt ", strong: "7 dni w tygodniu" },
+      { _type: "trustBarItem", _key: "trust0", icon: "☰", before: "Licencja pośrednika ", strong: "PFRN" },
+      { _type: "trustBarItem", _key: "trust1", icon: "★", strong: "4,9/5", after: " średnia ocena klientów" },
+      { _type: "trustBarItem", _key: "trust2", icon: "🔒", before: "Bezpieczeństwo prawne ", strong: "na każdym etapie" },
+      { _type: "trustBarItem", _key: "trust3", icon: "⏰", before: "Kontakt ", strong: "7 dni w tygodniu" },
     ],
   });
 
@@ -61,9 +61,9 @@ async function seed() {
     primaryButton: { _type: "link", label: "Zobacz nieruchomości", href: "#oferty" },
     secondaryButton: { _type: "link", label: "Umów bezpłatną konsultację", href: "#lead" },
     stats: [
-      { _type: "stat", value: "12+", label: "lat na rynku" },
-      { _type: "stat", value: "200+", label: "zrealizowanych transakcji" },
-      { _type: "stat", value: "10", label: "obsługiwanych powiatów" },
+      { _type: "stat", _key: "stat0", value: "12+", label: "lat na rynku" },
+      { _type: "stat", _key: "stat1", value: "200+", label: "zrealizowanych transakcji" },
+      { _type: "stat", _key: "stat2", value: "10", label: "obsługiwanych powiatów" },
     ],
     slides: [
       { _type: "heroSlide", _key: "s1", type: "image", tag: "Nieruchomość premium" },
@@ -165,16 +165,16 @@ async function seed() {
     companyDescription:
       "Rodzinne biuro nieruchomości działające na terenie województwa łódzkiego i lubelskiego. Transakcje bez stresu i zbędnych problemów.",
     navLinks: [
-      { _type: "link", label: "Nieruchomości", href: "#oferty" },
-      { _type: "link", label: "O nas", href: "#dlaczego" },
-      { _type: "link", label: "Opinie", href: "#opinie" },
-      { _type: "link", label: "Obszar działania", href: "#obszar" },
+      { _type: "link", _key: "nav0", label: "Nieruchomości", href: "#oferty" },
+      { _type: "link", _key: "nav1", label: "O nas", href: "#dlaczego" },
+      { _type: "link", _key: "nav2", label: "Opinie", href: "#opinie" },
+      { _type: "link", _key: "nav3", label: "Obszar działania", href: "#obszar" },
     ],
     serviceLinks: [
-      { _type: "link", label: "Sprzedaż nieruchomości", href: "#" },
-      { _type: "link", label: "Zakup nieruchomości", href: "#" },
-      { _type: "link", label: "Finansowanie / kredyt", href: "#" },
-      { _type: "link", label: "Home staging", href: "#" },
+      { _type: "link", _key: "svc0", label: "Sprzedaż nieruchomości", href: "#" },
+      { _type: "link", _key: "svc1", label: "Zakup nieruchomości", href: "#" },
+      { _type: "link", _key: "svc2", label: "Finansowanie / kredyt", href: "#" },
+      { _type: "link", _key: "svc3", label: "Home staging", href: "#" },
     ],
     contactLines: [
       "Marta Kołakowska",
@@ -184,9 +184,9 @@ async function seed() {
     ],
     copyrightText: "© 2026 4FF Nieruchomości Kołakowscy. Wszelkie prawa zastrzeżone.",
     legalLinks: [
-      { _type: "link", label: "Polityka prywatności", href: "#" },
-      { _type: "link", label: "Regulamin", href: "#" },
-      { _type: "link", label: "Ustawienia cookies", href: "#" },
+      { _type: "link", _key: "legal0", label: "Polityka prywatności", href: "#" },
+      { _type: "link", _key: "legal1", label: "Regulamin", href: "#" },
+      { _type: "link", _key: "legal2", label: "Ustawienia cookies", href: "#" },
     ],
     cookieBannerText:
       "Używamy plików cookies analitycznych i marketingowych (m.in. Facebook Pixel, Google Ads), aby lepiej dopasować ofertę. Szczegóły w Polityce prywatności.",
