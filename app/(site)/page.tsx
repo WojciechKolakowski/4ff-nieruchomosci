@@ -1,5 +1,5 @@
 import { getHomepageContent } from "@/content/homepage";
-import { Header } from "@/components/home/Header";
+import { getGlobalSettings } from "@/content/global-settings";
 import { Hero } from "@/components/home/Hero";
 import { TrustBar } from "@/components/home/TrustBar";
 import { FeaturedProperties } from "@/components/home/FeaturedProperties";
@@ -8,27 +8,20 @@ import { WhyUs } from "@/components/home/WhyUs";
 import { CtaBand } from "@/components/home/CtaBand";
 import { Testimonials } from "@/components/home/Testimonials";
 import { ServiceAreaRibbon } from "@/components/home/ServiceAreaRibbon";
-import { Footer } from "@/components/home/Footer";
-import { CookieBar } from "@/components/home/CookieBar";
-import { LoginModal } from "@/components/home/LoginModal";
 
 export default async function Home() {
-  const content = await getHomepageContent();
+  const [content, global] = await Promise.all([getHomepageContent(), getGlobalSettings()]);
 
   return (
     <>
-      <Header global={content.global} />
       <Hero content={content.hero} searchConfig={content.searchConfig} />
-      <TrustBar items={content.global.trustBarItems} />
+      <TrustBar items={global.trustBarItems} />
       <FeaturedProperties properties={content.featuredProperties} />
       <VipSection content={content.vip} vipProperties={content.vipProperties} />
       <WhyUs content={content.whyUs} />
       <CtaBand />
       <Testimonials testimonials={content.testimonials} />
       <ServiceAreaRibbon content={content.serviceArea} powiaty={content.powiaty} />
-      <Footer global={content.global} content={content.footer} />
-      <CookieBar content={content.footer} />
-      <LoginModal />
     </>
   );
 }

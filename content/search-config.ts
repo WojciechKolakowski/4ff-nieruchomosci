@@ -25,3 +25,8 @@ const query = groq`*[_type == "searchConfig"][0]{
 export async function getSearchConfigBase(): Promise<SearchConfigBase> {
   return client.fetch(query, {}, { next: { tags: ["searchConfig"], revalidate: 300 } });
 }
+
+export function parsePriceThreshold(label: string): number {
+  const digits = label.replace(/\D/g, "");
+  return digits ? parseInt(digits, 10) : 0;
+}

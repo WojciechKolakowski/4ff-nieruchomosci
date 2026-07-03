@@ -1,8 +1,8 @@
-import Image from "next/image";
-import type { PropertyCard } from "@/content/properties";
-import { PLACEHOLDER_LABEL } from "@/content/placeholders";
+import Link from "next/link";
+import type { PropertyCard as PropertyCardData } from "@/content/properties";
+import { PropertyCard } from "@/components/property/PropertyCard";
 
-export function FeaturedProperties({ properties }: { properties: PropertyCard[] }) {
+export function FeaturedProperties({ properties }: { properties: PropertyCardData[] }) {
   return (
     <section id="oferty">
       <div className="wrap">
@@ -16,57 +16,23 @@ export function FeaturedProperties({ properties }: { properties: PropertyCard[] 
         </div>
 
         <div className="prop-grid">
-          {properties.map((property) => {
-            const photo = property.gallery[0];
-            return (
-              <div className="prop-card" key={property.id}>
-                <div
-                  className="prop-photo"
-                  style={photo ? undefined : { background: property.placeholderGradient }}
-                >
-                  {photo ? (
-                    <Image
-                      src={photo.src}
-                      alt={photo.alt || property.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="(max-width: 920px) 100vw, 33vw"
-                    />
-                  ) : (
-                    <span className="ph-label">{PLACEHOLDER_LABEL}</span>
-                  )}
-                  {property.highlightLabel && (
-                    <span className="prop-tag">{property.highlightLabel}</span>
-                  )}
-                </div>
-                <div className="prop-body">
-                  <div className="prop-loc">{property.locationLabel}</div>
-                  <div className="prop-title">{property.title}</div>
-                  <div className="prop-meta">
-                    {property.metaItems.map((item) => (
-                      <span key={item}>{item}</span>
-                    ))}
-                  </div>
-                  <div className="prop-foot">
-                    <span className="prop-price">{property.priceLabel}</span>
-                    <a href="#" className="prop-link">
-                      Szczegóły →
-                    </a>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {properties.map((property) => (
+            <PropertyCard
+              key={property.id}
+              property={property}
+              href={`/nieruchomosci/${property.slug}`}
+            />
+          ))}
         </div>
 
         <div className="see-all">
-          <a
-            href="#"
+          <Link
+            href="/nieruchomosci"
             className="btn btn-outline"
             style={{ borderColor: "var(--line)", color: "var(--charcoal)" }}
           >
             Zobacz wszystkie nieruchomości
-          </a>
+          </Link>
         </div>
       </div>
     </section>
