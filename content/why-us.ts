@@ -22,5 +22,5 @@ const query = groq`*[_type == "whyUs"][0]{
 }`;
 
 export async function getWhyUsContent(): Promise<WhyUsContent> {
-  return client.fetch(query, {}, { next: { tags: ["whyUs"], revalidate: 3600 } });
+  return client.fetch(query, {}, { next: { tags: ["whyUs"], revalidate: 300 } });
 }

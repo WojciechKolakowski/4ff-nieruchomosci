@@ -56,7 +56,7 @@ const query = groq`*[_type == "property"] | order(_createdAt desc){
 type RawProperty = Omit<PropertyCard, "placeholderGradient">;
 
 export async function getProperties(): Promise<PropertyCard[]> {
-  const raw = await client.fetch<RawProperty[]>(query, {}, { next: { tags: ["property"], revalidate: 3600 } });
+  const raw = await client.fetch<RawProperty[]>(query, {}, { next: { tags: ["property"], revalidate: 300 } });
   return raw.map((property, index) => ({
     ...property,
     placeholderGradient: placeholderGradientFor(index),

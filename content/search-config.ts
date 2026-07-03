@@ -23,5 +23,5 @@ const query = groq`*[_type == "searchConfig"][0]{
 }`;
 
 export async function getSearchConfigBase(): Promise<SearchConfigBase> {
-  return client.fetch(query, {}, { next: { tags: ["searchConfig"], revalidate: 3600 } });
+  return client.fetch(query, {}, { next: { tags: ["searchConfig"], revalidate: 300 } });
 }

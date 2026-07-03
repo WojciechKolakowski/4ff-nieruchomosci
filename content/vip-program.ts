@@ -23,5 +23,5 @@ const query = groq`*[_type == "vipProgram"][0]{
 }`;
 
 export async function getVipProgramContent(): Promise<VipProgramContent> {
-  return client.fetch(query, {}, { next: { tags: ["vipProgram"], revalidate: 3600 } });
+  return client.fetch(query, {}, { next: { tags: ["vipProgram"], revalidate: 300 } });
 }

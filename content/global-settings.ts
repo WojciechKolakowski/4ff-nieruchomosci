@@ -48,5 +48,5 @@ const query = groq`*[_type == "globalSettings"][0]{
 }`;
 
 export async function getGlobalSettings(): Promise<GlobalSettings> {
-  return client.fetch(query, {}, { next: { tags: ["globalSettings"], revalidate: 3600 } });
+  return client.fetch(query, {}, { next: { tags: ["globalSettings"], revalidate: 300 } });
 }

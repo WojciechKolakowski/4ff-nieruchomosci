@@ -14,5 +14,5 @@ const query = groq`*[_type == "serviceArea"][0]{
 }`;
 
 export async function getServiceAreaContent(): Promise<ServiceAreaContent> {
-  return client.fetch(query, {}, { next: { tags: ["serviceArea"], revalidate: 3600 } });
+  return client.fetch(query, {}, { next: { tags: ["serviceArea"], revalidate: 300 } });
 }

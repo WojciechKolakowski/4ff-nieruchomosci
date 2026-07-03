@@ -89,7 +89,7 @@ type RawHero = Omit<HeroContent, "slides"> & {
 };
 
 export async function getHeroContent(): Promise<HeroContent> {
-  const raw = await client.fetch<RawHero>(query, {}, { next: { tags: ["hero"], revalidate: 3600 } });
+  const raw = await client.fetch<RawHero>(query, {}, { next: { tags: ["hero"], revalidate: 300 } });
 
   return {
     ...raw,

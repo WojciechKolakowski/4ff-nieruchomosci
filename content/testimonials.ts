@@ -20,5 +20,5 @@ const query = groq`*[_type == "testimonial" && visibleOnHomepage == true] | orde
 }`;
 
 export async function getTestimonials(): Promise<Testimonial[]> {
-  return client.fetch(query, {}, { next: { tags: ["testimonial"], revalidate: 3600 } });
+  return client.fetch(query, {}, { next: { tags: ["testimonial"], revalidate: 300 } });
 }

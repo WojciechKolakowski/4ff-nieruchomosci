@@ -27,5 +27,5 @@ const query = groq`*[_type == "footer"][0]{
 }`;
 
 export async function getFooterContent(): Promise<FooterContent> {
-  return client.fetch(query, {}, { next: { tags: ["footer"], revalidate: 3600 } });
+  return client.fetch(query, {}, { next: { tags: ["footer"], revalidate: 300 } });
 }

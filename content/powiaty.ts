@@ -14,5 +14,5 @@ const query = groq`*[_type == "powiat"] | order(order asc){
 }`;
 
 export async function getPowiatyList(): Promise<Powiat[]> {
-  return client.fetch(query, {}, { next: { tags: ["powiat"], revalidate: 3600 } });
+  return client.fetch(query, {}, { next: { tags: ["powiat"], revalidate: 300 } });
 }
