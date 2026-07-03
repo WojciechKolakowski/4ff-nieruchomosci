@@ -25,39 +25,39 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
         className="carousel-track"
         style={{ transform: `translateX(-${index * 100}%)` }}
       >
-        {slides.map((slide, i) => (
-          <div
-            key={i}
-            className={slide.type === "video" ? "slide slide-video" : "slide"}
-            style={slide.image ? undefined : { background: slide.placeholderGradient }}
-          >
-            {slide.image && (
-              <Image
-                src={slide.image.src}
-                alt={slide.image.alt || slide.tag}
-                fill
-                style={{ objectFit: "cover" }}
-                sizes="100vw"
-                priority={i === 0}
-              />
-            )}
-            <span className="ph-tag">{slide.tag}</span>
-            {slide.type === "video" && (
-              <button
-                className="play-btn"
-                aria-label="Odtwórz wideo powitalne"
-                onClick={() =>
-                  alert(
-                    "Prototyp — tu docelowo odtworzy się wideo powitalne biura (autoplay, wyciszone, w pętli)."
-                  )
-                }
-              >
-                ▶
-              </button>
-            )}
-            {!slide.image && <span className="ph-label">{PLACEHOLDER_LABEL}</span>}
-          </div>
-        ))}
+        {slides.map((slide, i) => {
+          const hasMedia = slide.type === "video" ? Boolean(slide.videoUrl) : Boolean(slide.image);
+          return (
+            <div
+              key={i}
+              className={slide.type === "video" ? "slide slide-video" : "slide"}
+              style={hasMedia ? undefined : { background: slide.placeholderGradient }}
+            >
+              {slide.type === "video" && slide.videoUrl && (
+                <video
+                  className="slide-video-el"
+                  src={slide.videoUrl}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              )}
+              {slide.type === "image" && slide.image && (
+                <Image
+                  src={slide.image.src}
+                  alt={slide.image.alt || slide.tag}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="100vw"
+                  priority={i === 0}
+                />
+              )}
+              <span className="ph-tag">{slide.tag}</span>
+              {!hasMedia && <span className="ph-label">{PLACEHOLDER_LABEL}</span>}
+            </div>
+          );
+        })}
       </div>
       <button className="car-arrow prev" aria-label="Poprzedni slajd" onClick={() => move(-1)}>
         ‹

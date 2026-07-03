@@ -50,7 +50,14 @@ export const hero = defineType({
               options: { hotspot: true },
               fields: [{ name: "alt", title: "Tekst alternatywny", type: "string" }],
             },
-            { name: "video", title: "Wideo (link YouTube lub URL)", type: "url" },
+            {
+              name: "video",
+              title: "Wideo (plik mp4)",
+              type: "file",
+              description:
+                "Krótki, skompresowany plik mp4 — odtwarza się automatycznie w tle, wyciszony, w pętli. Zalecane: kilka–kilkanaście MB, nie kilkaset.",
+              options: { accept: "video/mp4" },
+            },
             { name: "link", title: "Link docelowy", type: "url" },
           ],
         },

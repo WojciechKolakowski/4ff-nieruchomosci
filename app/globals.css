@@ -305,22 +305,12 @@ nav a:hover {
   right: 0;
   z-index: 3;
 }
-.play-btn {
-  position: relative;
-  z-index: 3;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(247, 242, 230, 0.9);
-  color: var(--charcoal);
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 4px;
-}
-.play-btn:hover {
-  background: var(--gold);
+.slide-video-el {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .car-arrow {
   position: absolute;

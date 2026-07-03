@@ -66,7 +66,7 @@ const query = groq`*[_type == "hero"][0]{
     tag,
     link,
     "image": image${imageProjection},
-    "videoUrl": video
+    "videoUrl": video.asset->url
   }, []),
   "leadForm": {
     "heading": leadForm.heading,
