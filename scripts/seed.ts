@@ -52,7 +52,7 @@ async function seed() {
   await client.createOrReplace({
     _id: "hero",
     _type: "hero",
-    eyebrow: "Biuro nieruchomości · Łódzkie i Lubelskie",
+    eyebrow: "Biuro nieruchomości Pabianice",
     headlineBefore: "Twój dom, Twoja",
     highlightedWord: "swoboda",
     headlineAfter: "nasza odpowiedzialność",
@@ -163,7 +163,7 @@ async function seed() {
     _id: "footer",
     _type: "footer",
     companyDescription:
-      "Rodzinne biuro nieruchomości działające na terenie województwa łódzkiego i lubelskiego. Transakcje bez stresu i zbędnych problemów.",
+      "Rodzinne biuro nieruchomości działające na terenie województwa łódzkiego. Transakcje bez stresu i zbędnych problemów.",
     navLinks: [
       { _type: "link", _key: "nav0", label: "Nieruchomości", href: "#oferty" },
       { _type: "link", _key: "nav1", label: "O nas", href: "#dlaczego" },
@@ -213,9 +213,9 @@ async function seed() {
     _id: "serviceArea",
     _type: "serviceArea",
     eyebrow: "Zasięg działania",
-    heading: "Dwa regiony, jedno biuro zaufania",
+    heading: "Jeden region, jedno biuro zaufania",
     description:
-      "Obsługujemy transakcje nieruchomościowe w powiatach województwa łódzkiego i lubelskiego.",
+      "Obsługujemy transakcje nieruchomościowe w powiatach województwa łódzkiego.",
   });
 
   console.log("Seeding powiaty...");
@@ -225,12 +225,6 @@ async function seed() {
     { id: "powiat-lodzki-wschodni", name: "Powiat Łódzki Wschodni", voivodeship: "łódzkie", order: 3 },
     { id: "powiat-laski", name: "Powiat Łaski", voivodeship: "łódzkie", order: 4 },
     { id: "powiat-zgierski", name: "Powiat Zgierski", voivodeship: "łódzkie", order: 5 },
-    { id: "powiat-lubelski", name: "Powiat Lubelski", voivodeship: "lubelskie", order: 6 },
-    { id: "powiat-krasnostawski", name: "Powiat Krasnostawski", voivodeship: "lubelskie", order: 7 },
-    { id: "powiat-swidnicki", name: "Powiat Świdnicki", voivodeship: "lubelskie", order: 8 },
-    { id: "powiat-bilgorajski", name: "Powiat Biłgorajski", voivodeship: "lubelskie", order: 9 },
-    { id: "powiat-zamojski", name: "Powiat Zamojski", voivodeship: "lubelskie", order: 10 },
-    { id: "powiat-janowski", name: "Powiat Janowski", voivodeship: "lubelskie", order: 11 },
   ];
   for (const p of powiaty) {
     await client.createOrReplace({
@@ -270,7 +264,9 @@ async function seed() {
     rating: 5,
     clientSignature: "Klient — zakup mieszkania",
     location: "Lubelszczyzna",
-    visibleOnHomepage: true,
+    // Hidden: we no longer publicly position the agency in this region,
+    // though the underlying transaction is historically accurate.
+    visibleOnHomepage: false,
   });
 
   console.log("Seeding properties...");
@@ -312,7 +308,8 @@ async function seed() {
     _type: "property",
     title: "Komfortowe siedlisko z zabudową",
     slug: { _type: "slug", current: "komfortowe-siedlisko" },
-    status: "public",
+    // Draft: no longer publicly positioning the agency in this region.
+    status: "draft",
     priceLabel: "Cena na zapytanie",
     propertyType: "Dom",
     locationLabel: "Lubelszczyzna",
@@ -338,7 +335,8 @@ async function seed() {
     _type: "property",
     title: "Działka budowlana, 1200 m²",
     slug: { _type: "slug", current: "dzialka-budowlana-lubelszczyzna" },
-    status: "vip",
+    // Draft: no longer publicly positioning the agency in this region.
+    status: "draft",
     unlockDate: inDays(3),
     propertyType: "Działka",
     locationLabel: "Lubelszczyzna",

@@ -33,7 +33,7 @@ async function run() {
     lead: "Twój dom to nie tylko metry kwadratowe — to Twoja historia. Prowadzimy Cię przez cały proces sprzedaży tak, żebyś nie musiał/a martwić się o żadną formalność.",
     body: [
       paragraph(
-        "Sprzedaż nieruchomości zaczynamy od bezpłatnej, rzetelnej wyceny — bez naciągania w górę czy w dół, tylko realna cena rynkowa dopasowana do Twojej okolicy: czy to Powiat Pabianicki, Łódź, Powiat Łódzki Wschodni, Powiat Łaski, Powiat Zgierski, czy Lubelszczyzna."
+        "Sprzedaż nieruchomości zaczynamy od bezpłatnej, rzetelnej wyceny — bez naciągania w górę czy w dół, tylko realna cena rynkowa dopasowana do Twojej okolicy: czy to Powiat Pabianicki, Łódź, Powiat Łódzki Wschodni, Powiat Łaski czy Powiat Zgierski."
       ),
       paragraph(
         "Dalej bierzemy na siebie to, co najbardziej czasochłonne: profesjonalną sesję zdjęciową, home staging, przygotowanie oferty i jej promocję — także wśród naszych zalogowanych użytkowników programu 4FF VIP, którzy widzą nowe oferty 7 dni przed ich publiczną publikacją."
@@ -52,7 +52,7 @@ async function run() {
     _type: "page",
     title: "Zakup nieruchomości",
     slug: { _type: "slug", current: "zakup-nieruchomosci" },
-    metaTitle: "Zakup nieruchomości Łódzkie i Lubelskie | 4FF Nieruchomości",
+    metaTitle: "Zakup nieruchomości Łódzkie | 4FF Nieruchomości",
     metaDescription:
       "Szukasz domu, mieszkania lub działki? Pomagamy znaleźć, zweryfikować i bezpiecznie kupić nieruchomość — z pełnym wsparciem prawnym i finansowym.",
     eyebrow: "Nasze usługi",
@@ -60,7 +60,7 @@ async function run() {
     lead: "Kupno nieruchomości to jedna z ważniejszych decyzji w życiu. Chcemy, żebyś podejmował/a ją ze spokojną głową, mając pełny obraz sytuacji prawnej i finansowej.",
     body: [
       paragraph(
-        "Zaczynamy od rozmowy o tym, czego naprawdę szukasz — lokalizacji, budżetu, typu nieruchomości. Przeszukujemy naszą bieżącą ofertę w powiatach: Pabianickim, Łódzkim Wschodnim, Łaskim, Zgierskim, w samej Łodzi oraz na Lubelszczyźnie, a dzięki programowi 4FF VIP masz dostęp do nowych ofert zanim trafią do internetu."
+        "Zaczynamy od rozmowy o tym, czego naprawdę szukasz — lokalizacji, budżetu, typu nieruchomości. Przeszukujemy naszą bieżącą ofertę w powiatach: Pabianickim, Łódzkim Wschodnim, Łaskim, Zgierskim oraz w samej Łodzi, a dzięki programowi 4FF VIP masz dostęp do nowych ofert zanim trafią do internetu."
       ),
       paragraph(
         "Przy każdej nieruchomości sprawdzamy stan prawny — księgę wieczystą, obciążenia, zgodność z planem zagospodarowania. Jeśli interesuje Cię inwestycja na rynku pierwotnym, wyjaśniamy status prawny dewelopera i zabezpieczenia Twoich wpłat."

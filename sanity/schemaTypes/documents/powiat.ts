@@ -10,7 +10,7 @@ export const powiat = defineType({
       name: "voivodeship",
       title: "Województwo",
       type: "string",
-      options: { list: ["łódzkie", "lubelskie"] },
+      options: { list: ["łódzkie"] },
     }),
     defineField({ name: "order", title: "Kolejność wyświetlania", type: "number" }),
   ],

@@ -3,7 +3,7 @@ import { client } from "@/sanity/lib/client";
 
 export interface Powiat {
   name: string;
-  voivodeship: "łódzkie" | "lubelskie";
+  voivodeship: "łódzkie";
   order: number;
 }
 

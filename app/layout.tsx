@@ -27,7 +27,7 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: "4FF Nieruchomości — Biuro nieruchomości Łódzkie",
   description:
-    "Rodzinne biuro nieruchomości działające na terenie województwa łódzkiego i lubelskiego. Sprzedaż i zakup nieruchomości bez stresu i zbędnych formalności.",
+    "Rodzinne biuro nieruchomości działające na terenie województwa łódzkiego. Sprzedaż i zakup nieruchomości bez stresu i zbędnych formalności.",
 };
 
 export default function RootLayout({
