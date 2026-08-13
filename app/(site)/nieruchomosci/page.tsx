@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getPropertyListing } from "@/content/property-listing";
 import { getSearchConfigBase } from "@/content/search-config";
 import { getPowiatyList } from "@/content/powiaty";
@@ -5,6 +6,12 @@ import { SearchBar } from "@/components/home/SearchBar";
 import { PropertyCard } from "@/components/property/PropertyCard";
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+export const metadata: Metadata = {
+  title: "Oferty nieruchomości — domy, mieszkania, działki | 4FF Nieruchomości",
+  description:
+    "Przeglądaj aktualną ofertę domów, mieszkań, działek i lokali w województwie łódzkim. Filtruj według lokalizacji, typu nieruchomości i ceny.",
+};
 
 function firstString(value: string | string[] | undefined): string {
   return typeof value === "string" ? value : "";

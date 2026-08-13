@@ -21,9 +21,18 @@ export async function generateMetadata({
   if (!property) {
     return {};
   }
+  const facts = [property.propertyType, property.locationLabel, property.priceLabel, ...property.metaItems]
+    .filter(Boolean)
+    .join(" · ");
+  const image = property.gallery[0]?.src;
   return {
     title: `${property.title} — 4FF Nieruchomości`,
-    description: property.locationLabel,
+    description: facts,
+    openGraph: {
+      title: property.title,
+      description: facts,
+      images: image ? [{ url: image }] : undefined,
+    },
   };
 }
 

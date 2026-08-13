@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Work_Sans, Caveat } from "next/font/google";
 import { LoginModalProvider } from "@/components/home/LoginModalProvider";
+import { SITE_URL, SITE_NAME } from "@/content/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -24,10 +25,27 @@ const caveat = Caveat({
   display: "swap",
 });
 
+const title = "4FF Nieruchomości — Biuro nieruchomości Łódzkie";
+const description =
+  "Rodzinne biuro nieruchomości działające na terenie województwa łódzkiego. Sprzedaż i zakup nieruchomości bez stresu i zbędnych formalności.";
+
 export const metadata: Metadata = {
-  title: "4FF Nieruchomości — Biuro nieruchomości Łódzkie",
-  description:
-    "Rodzinne biuro nieruchomości działające na terenie województwa łódzkiego. Sprzedaż i zakup nieruchomości bez stresu i zbędnych formalności.",
+  metadataBase: new URL(SITE_URL),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    siteName: SITE_NAME,
+    locale: "pl_PL",
+    type: "website",
+    url: SITE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({
