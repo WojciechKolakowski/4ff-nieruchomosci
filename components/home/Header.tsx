@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { GlobalSettings } from "@/content/global-settings";
 import { OpenLoginModalButton } from "./OpenLoginModalButton";
+import { MobileNav } from "./MobileNav";
 
 // Older CMS data may still list the individual service pages as separate
 // nav entries; they now live under the single "Usługi" link below.
@@ -17,6 +18,8 @@ export function Header({ global }: { global: GlobalSettings }) {
   const [phonePrefix, ...rest] = phone.split(" ");
   const phoneNumber = rest.join(" ");
   const [firstLink, ...restLinks] = navLinks.filter((link) => !SERVICE_HREFS.has(link.href));
+  const uslugiLink = { label: "Usługi", href: "/uslugi" };
+  const displayLinks = firstLink ? [firstLink, uslugiLink, ...restLinks] : [uslugiLink, ...restLinks];
 
   return (
     <header>
@@ -32,15 +35,7 @@ export function Header({ global }: { global: GlobalSettings }) {
         </Link>
         <nav>
           <ul>
-            {firstLink && (
-              <li key={firstLink.href}>
-                <Link href={firstLink.href}>{firstLink.label}</Link>
-              </li>
-            )}
-            <li>
-              <Link href="/uslugi">Usługi</Link>
-            </li>
-            {restLinks.map((link) => (
+            {displayLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href}>{link.label}</Link>
               </li>
@@ -57,6 +52,7 @@ export function Header({ global }: { global: GlobalSettings }) {
           <Link href="/#lead" className="btn btn-gold">
             {ctaValuationButtonLabel}
           </Link>
+          <MobileNav links={displayLinks} phone={phone} />
         </div>
       </div>
     </header>
