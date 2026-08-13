@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useLoginModal } from "./LoginModalProvider";
 
 export function LoginModal() {
@@ -60,13 +61,13 @@ export function LoginModal() {
             </button>
             <p className="rodo-note">
               Zakładając konto akceptujesz{" "}
-              <a href="#" style={{ color: "var(--gold-dark)" }}>
+              <Link href="/regulamin" style={{ color: "var(--gold-dark)" }}>
                 Regulamin
-              </a>{" "}
+              </Link>{" "}
               i{" "}
-              <a href="#" style={{ color: "var(--gold-dark)" }}>
+              <Link href="/polityka-prywatnosci" style={{ color: "var(--gold-dark)" }}>
                 Politykę prywatności
-              </a>
+              </Link>
               .
             </p>
           </form>

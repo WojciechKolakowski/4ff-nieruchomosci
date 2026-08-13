@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function CtaBand() {
   return (
     <div className="cta-band">
@@ -9,9 +11,9 @@ export function CtaBand() {
             bez zobowiązań.
           </p>
         </div>
-        <a href="#lead" className="btn btn-gold">
+        <Link href="/#lead" className="btn btn-gold">
           Umów rozmowę
-        </a>
+        </Link>
       </div>
     </div>
   );

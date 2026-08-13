@@ -82,7 +82,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 96px;
 }
 .logo {
   display: flex;
@@ -90,7 +90,7 @@ header {
   color: var(--cream);
 }
 .logo-img {
-  height: 52px;
+  height: 78px;
   width: auto;
   display: block;
 }

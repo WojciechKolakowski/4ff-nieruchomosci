@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { GlobalSettings } from "@/content/global-settings";
 import { OpenLoginModalButton } from "./OpenLoginModalButton";
 
@@ -10,7 +11,7 @@ export function Header({ global }: { global: GlobalSettings }) {
   return (
     <header>
       <div className="nav-inner">
-        <a href="#" className="logo">
+        <Link href="/" className="logo">
           <Image
             src={logo.light.src}
             alt={logo.light.alt}
@@ -18,12 +19,12 @@ export function Header({ global }: { global: GlobalSettings }) {
             height={logo.light.height}
             className="logo-img"
           />
-        </a>
+        </Link>
         <nav>
           <ul>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href}>{link.label}</a>
+                <Link href={link.href}>{link.label}</Link>
               </li>
             ))}
           </ul>
@@ -35,9 +36,9 @@ export function Header({ global }: { global: GlobalSettings }) {
           <OpenLoginModalButton className="btn btn-outline">
             {loginButtonLabel}
           </OpenLoginModalButton>
-          <a href="#lead" className="btn btn-gold">
+          <Link href="/#lead" className="btn btn-gold">
             {ctaValuationButtonLabel}
-          </a>
+          </Link>
         </div>
       </div>
     </header>

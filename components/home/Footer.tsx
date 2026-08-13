@@ -50,9 +50,9 @@ export function Footer({
           <div className="foot-col">
             <h4>Nawigacja</h4>
             {content.navLinks.map((link) => (
-              <a href={link.href} key={link.href}>
+              <Link href={link.href} key={link.href}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="foot-col">
