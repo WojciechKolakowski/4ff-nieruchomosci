@@ -1122,6 +1122,14 @@ footer {
 .foot-bottom a:hover {
   color: var(--gold);
 }
+.foot-cookie-settings {
+  color: rgba(247, 242, 230, 0.55);
+  margin-left: 18px;
+  font-size: inherit;
+}
+.foot-cookie-settings:hover {
+  color: var(--gold);
+}
 @media (max-width: 920px) {
   .foot-grid {
     grid-template-columns: 1fr 1fr;
@@ -1177,6 +1185,40 @@ footer {
   background: transparent;
   border: 1px solid var(--line);
   color: var(--ink-soft);
+}
+.cookie-settings {
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 480px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.cookie-settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cookie-settings-header h3 {
+  font-size: 18px;
+}
+.cookie-category {
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+}
+.cookie-category label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.cookie-category input {
+  accent-color: var(--gold);
+}
+.cookie-category p {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 6px 0 0 24px;
 }
 
 /* ---------- PROPERTY DETAIL ---------- */

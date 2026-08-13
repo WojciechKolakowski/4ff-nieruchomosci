@@ -2,6 +2,12 @@ import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import type { CmsLink } from "./types";
 
+export interface CookieCategory {
+  key: "necessary" | "analytics" | "marketing";
+  label: string;
+  description: string;
+}
+
 export interface FooterContent {
   companyDescription: string;
   navLinks: CmsLink[];
@@ -12,6 +18,10 @@ export interface FooterContent {
   cookieBannerText: string;
   cookieAcceptLabel: string;
   cookieRejectLabel: string;
+  cookieSettingsHeading: string;
+  cookieSettingsLead: string;
+  cookieSaveLabel: string;
+  cookieCategories: CookieCategory[];
 }
 
 const query = groq`*[_type == "footer"][0]{
@@ -23,7 +33,15 @@ const query = groq`*[_type == "footer"][0]{
   "legalLinks": coalesce(legalLinks[]{label, href}, []),
   cookieBannerText,
   cookieAcceptLabel,
-  cookieRejectLabel
+  cookieRejectLabel,
+  cookieSettingsHeading,
+  cookieSettingsLead,
+  cookieSaveLabel,
+  "cookieCategories": [
+    { "key": "necessary", "label": cookieCategoryNecessaryLabel, "description": cookieCategoryNecessaryDescription },
+    { "key": "analytics", "label": cookieCategoryAnalyticsLabel, "description": cookieCategoryAnalyticsDescription },
+    { "key": "marketing", "label": cookieCategoryMarketingLabel, "description": cookieCategoryMarketingDescription }
+  ]
 }`;
 
 export async function getFooterContent(): Promise<FooterContent> {

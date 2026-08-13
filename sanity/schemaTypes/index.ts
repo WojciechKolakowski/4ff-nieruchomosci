@@ -11,6 +11,7 @@ import { serviceArea } from "./singletons/serviceArea";
 import { property } from "./documents/property";
 import { testimonial } from "./documents/testimonial";
 import { powiat } from "./documents/powiat";
+import { page } from "./documents/page";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   link,
@@ -24,6 +25,7 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   property,
   testimonial,
   powiat,
+  page,
 ];
 
 export const singletonTypeNames = [

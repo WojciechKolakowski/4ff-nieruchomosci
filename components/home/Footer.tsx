@@ -1,6 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { GlobalSettings } from "@/content/global-settings";
 import type { FooterContent } from "@/content/footer";
+import { OpenCookieSettingsButton } from "./OpenCookieSettingsButton";
+
+const COOKIE_SETTINGS_SENTINEL = "#cookie-settings";
 
 export function Footer({
   global,
@@ -54,9 +58,9 @@ export function Footer({
           <div className="foot-col">
             <h4>Usługi</h4>
             {content.serviceLinks.map((link) => (
-              <a href={link.href} key={link.label}>
+              <Link href={link.href} key={link.label}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="foot-col">
@@ -69,11 +73,17 @@ export function Footer({
         <div className="foot-bottom">
           <span>{content.copyrightText}</span>
           <span>
-            {content.legalLinks.map((link) => (
-              <a href={link.href} key={link.label}>
-                {link.label}
-              </a>
-            ))}
+            {content.legalLinks.map((link) =>
+              link.href === COOKIE_SETTINGS_SENTINEL ? (
+                <OpenCookieSettingsButton key={link.label} className="foot-cookie-settings">
+                  {link.label}
+                </OpenCookieSettingsButton>
+              ) : (
+                <Link href={link.href} key={link.label}>
+                  {link.label}
+                </Link>
+              )
+            )}
           </span>
         </div>
       </div>

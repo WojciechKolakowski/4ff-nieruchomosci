@@ -2,6 +2,7 @@ import { getGlobalSettings } from "@/content/global-settings";
 import { getFooterContent } from "@/content/footer";
 import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
+import { CookieConsentProvider } from "@/components/home/CookieConsentProvider";
 import { CookieBar } from "@/components/home/CookieBar";
 import { LoginModal } from "@/components/home/LoginModal";
 
@@ -9,12 +10,12 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
   const [global, footer] = await Promise.all([getGlobalSettings(), getFooterContent()]);
 
   return (
-    <>
+    <CookieConsentProvider>
       <Header global={global} />
       {children}
       <Footer global={global} content={footer} />
       <CookieBar content={footer} />
       <LoginModal />
-    </>
+    </CookieConsentProvider>
   );
 }
