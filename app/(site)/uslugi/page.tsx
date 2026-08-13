@@ -33,16 +33,12 @@ export default async function UslugiPage() {
           </p>
         </div>
 
-        <div className="why-grid" style={{ background: "var(--line)" }}>
+        <div className="service-grid">
           {pages.map((page) => (
-            <div className="why-card" key={page.slug} style={{ background: "var(--cream)" }}>
+            <div className="service-card" key={page.slug}>
               <h3>{page.heading}</h3>
-              {page.lead && <p style={{ color: "var(--ink-soft)" }}>{page.lead}</p>}
-              <Link
-                href={`/${page.slug}`}
-                className="btn btn-outline"
-                style={{ marginTop: "22px", borderColor: "var(--line)", color: "var(--charcoal)" }}
-              >
+              {page.lead && <p>{page.lead}</p>}
+              <Link href={`/${page.slug}`} className="btn btn-outline" style={{ borderColor: "var(--line)", color: "var(--charcoal)" }}>
                 Dowiedz się więcej
               </Link>
             </div>

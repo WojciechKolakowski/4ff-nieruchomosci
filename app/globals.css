@@ -996,6 +996,36 @@ section {
   }
 }
 
+/* ---------- SERVICES (light variant of why-grid) ---------- */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--line);
+}
+.service-card {
+  background: var(--cream);
+  padding: 38px 30px;
+}
+.service-card h3 {
+  color: var(--charcoal);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.service-card p {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+.service-card .btn {
+  margin-top: 22px;
+}
+@media (max-width: 920px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- CTA BAND ---------- */
 .cta-band {
   background: linear-gradient(120deg, var(--rust), #8f3c1f);
