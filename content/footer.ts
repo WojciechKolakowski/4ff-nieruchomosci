@@ -18,6 +18,7 @@ export interface FooterContent {
   cookieBannerText: string;
   cookieAcceptLabel: string;
   cookieRejectLabel: string;
+  cookieCustomizeLabel: string;
   cookieSettingsHeading: string;
   cookieSettingsLead: string;
   cookieSaveLabel: string;
@@ -34,6 +35,7 @@ const query = groq`*[_type == "footer"][0]{
   cookieBannerText,
   cookieAcceptLabel,
   cookieRejectLabel,
+  cookieCustomizeLabel,
   cookieSettingsHeading,
   cookieSettingsLead,
   cookieSaveLabel,

@@ -76,7 +76,7 @@ function CookieSettingsPanel({ content }: { content: FooterContent }) {
 }
 
 export function CookieBar({ content }: { content: FooterContent }) {
-  const { isOpen, view, acceptAll, rejectAll } = useCookieConsent();
+  const { isOpen, view, acceptAll, rejectAll, openSettings } = useCookieConsent();
 
   if (!isOpen) {
     return null;
@@ -92,6 +92,9 @@ export function CookieBar({ content }: { content: FooterContent }) {
       <div className="cookie-actions">
         <button className="cookie-reject" onClick={rejectAll}>
           {content.cookieRejectLabel}
+        </button>
+        <button className="cookie-customize" onClick={openSettings}>
+          {content.cookieCustomizeLabel}
         </button>
         <button className="cookie-accept" onClick={acceptAll}>
           {content.cookieAcceptLabel}

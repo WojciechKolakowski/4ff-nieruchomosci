@@ -171,10 +171,10 @@ async function seed() {
       { _type: "link", _key: "nav3", label: "Obszar działania", href: "#obszar" },
     ],
     serviceLinks: [
-      { _type: "link", _key: "svc0", label: "Sprzedaż nieruchomości", href: "#" },
-      { _type: "link", _key: "svc1", label: "Zakup nieruchomości", href: "#" },
-      { _type: "link", _key: "svc2", label: "Finansowanie / kredyt", href: "#" },
-      { _type: "link", _key: "svc3", label: "Home staging", href: "#" },
+      { _type: "link", _key: "svc0", label: "Sprzedaż nieruchomości", href: "/sprzedaz-nieruchomosci" },
+      { _type: "link", _key: "svc1", label: "Zakup nieruchomości", href: "/zakup-nieruchomosci" },
+      { _type: "link", _key: "svc2", label: "Finansowanie / kredyt", href: "/finansowanie-kredyt" },
+      { _type: "link", _key: "svc3", label: "Home staging", href: "/home-staging" },
     ],
     contactLines: [
       "Marta Kołakowska",
@@ -184,14 +184,28 @@ async function seed() {
     ],
     copyrightText: "© 2026 4FF Nieruchomości Kołakowscy. Wszelkie prawa zastrzeżone.",
     legalLinks: [
-      { _type: "link", _key: "legal0", label: "Polityka prywatności", href: "#" },
-      { _type: "link", _key: "legal1", label: "Regulamin", href: "#" },
-      { _type: "link", _key: "legal2", label: "Ustawienia cookies", href: "#" },
+      { _type: "link", _key: "legal0", label: "Polityka prywatności", href: "/polityka-prywatnosci" },
+      { _type: "link", _key: "legal1", label: "Regulamin", href: "/regulamin" },
+      { _type: "link", _key: "legal2", label: "Ustawienia cookies", href: "#cookie-settings" },
     ],
     cookieBannerText:
       "Używamy plików cookies analitycznych i marketingowych (m.in. Facebook Pixel, Google Ads), aby lepiej dopasować ofertę. Szczegóły w Polityce prywatności.",
     cookieAcceptLabel: "Akceptuję wszystkie",
-    cookieRejectLabel: "Tylko niezbędne",
+    cookieRejectLabel: "Odrzucam wszystko",
+    cookieCustomizeLabel: "Dostosuj ustawienia",
+    cookieSettingsHeading: "Ustawienia plików cookies",
+    cookieSettingsLead:
+      "Używamy plików cookies, żeby strona działała sprawnie i żeby pokazywać Ci trafniejsze oferty. Wybierasz Ty.",
+    cookieCategoryNecessaryLabel: "Niezbędne",
+    cookieCategoryNecessaryDescription:
+      "Umożliwiają podstawowe działanie strony — nawigację, wypełnianie formularzy, zapamiętanie ustawień cookies. Bez nich strona nie działałaby poprawnie.",
+    cookieCategoryAnalyticsLabel: "Analityczne",
+    cookieCategoryAnalyticsDescription:
+      "Pomagają nam zrozumieć, jak korzystasz ze strony, żebyśmy mogli ją stale poprawiać.",
+    cookieCategoryMarketingLabel: "Marketingowe",
+    cookieCategoryMarketingDescription:
+      "Wykorzystujemy m.in. Facebook Pixel i Google Ads, żeby pokazywać Ci trafniejsze reklamy naszych ofert i mierzyć skuteczność kampanii.",
+    cookieSaveLabel: "Zapisz ustawienia",
   });
 
   console.log("Seeding serviceArea...");

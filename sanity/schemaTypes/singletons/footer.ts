@@ -20,6 +20,11 @@ export const footer = defineType({
     defineField({ name: "cookieAcceptLabel", title: "Tekst przycisku akceptacji", type: "string" }),
     defineField({ name: "cookieRejectLabel", title: "Tekst przycisku odrzucenia", type: "string" }),
     defineField({
+      name: "cookieCustomizeLabel",
+      title: "Tekst przycisku „Dostosuj ustawienia” (w banerze)",
+      type: "string",
+    }),
+    defineField({
       name: "cookieSettingsHeading",
       title: "Panel ustawień cookies — nagłówek",
       type: "string",
