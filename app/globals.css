@@ -1445,6 +1445,7 @@ footer {
   color: var(--ink-soft);
   line-height: 1.7;
   max-width: 720px;
+  padding-top: 24px;
   margin-bottom: 32px;
 }
 .property-description p {
