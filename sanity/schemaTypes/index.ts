@@ -12,6 +12,7 @@ import { property } from "./documents/property";
 import { testimonial } from "./documents/testimonial";
 import { powiat } from "./documents/powiat";
 import { page } from "./documents/page";
+import { article } from "./documents/article";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   link,
@@ -26,6 +27,7 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   testimonial,
   powiat,
   page,
+  article,
 ];
 
 export const singletonTypeNames = [

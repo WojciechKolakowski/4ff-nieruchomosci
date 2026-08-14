@@ -169,6 +169,7 @@ async function seed() {
       { _type: "link", _key: "nav1", label: "O nas", href: "#dlaczego" },
       { _type: "link", _key: "nav2", label: "Opinie", href: "#opinie" },
       { _type: "link", _key: "nav3", label: "Obszar działania", href: "#obszar" },
+      { _type: "link", _key: "nav-poradnik", label: "Poradnik", href: "/poradnik" },
     ],
     serviceLinks: [
       { _type: "link", _key: "svc0", label: "Sprzedaż nieruchomości", href: "/sprzedaz-nieruchomosci" },

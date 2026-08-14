@@ -789,6 +789,37 @@ section {
   margin-top: 44px;
 }
 
+/* ---------- PORADNIK (articles) ---------- */
+.article-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.article-card:hover {
+  box-shadow: 0 18px 34px -18px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+.article-photo {
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+.article-excerpt {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.article-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-width: 760px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
 @media (max-width: 920px) {
   .prop-grid {
     grid-template-columns: 1fr;

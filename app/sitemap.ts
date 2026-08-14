@@ -2,13 +2,15 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/content/site";
 import { getAllPageSlugs } from "@/content/page";
 import { getPublicPropertySlugs } from "@/content/property-listing";
+import { getAllArticleSlugs } from "@/content/poradnik";
 
-const STATIC_ROUTES = ["/", "/nieruchomosci", "/uslugi"];
+const STATIC_ROUTES = ["/", "/nieruchomosci", "/uslugi", "/poradnik"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [pageSlugs, propertySlugs] = await Promise.all([
+  const [pageSlugs, propertySlugs, articleSlugs] = await Promise.all([
     getAllPageSlugs(),
     getPublicPropertySlugs(),
+    getAllArticleSlugs(),
   ]);
 
   const staticEntries = STATIC_ROUTES.map((route) => ({
@@ -26,5 +28,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
   }));
 
-  return [...staticEntries, ...pageEntries, ...propertyEntries];
+  const articleEntries = articleSlugs.map(({ slug }) => ({
+    url: `${SITE_URL}/poradnik/${slug}`,
+    lastModified: new Date(),
+  }));
+
+  return [...staticEntries, ...pageEntries, ...propertyEntries, ...articleEntries];
 }
