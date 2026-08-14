@@ -41,6 +41,9 @@ export default async function ArticlePage({
   return (
     <section className="content-page">
       <div className="wrap">
+        <Link href="/poradnik" className="article-back-link">
+          ← Wróć do listy artykułów
+        </Link>
         <div className="sec-head" style={{ maxWidth: "760px" }}>
           {article.category && <span className="eyebrow">{article.category}</span>}
           <h1>{article.title}</h1>

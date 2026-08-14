@@ -3,6 +3,13 @@ import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
 import { getPageBySlug, getAllPageSlugs } from "@/content/page";
 
+const SERVICE_SLUGS = new Set([
+  "sprzedaz-nieruchomosci",
+  "zakup-nieruchomosci",
+  "finansowanie-kredyt",
+  "home-staging",
+]);
+
 export async function generateStaticParams() {
   const slugs = await getAllPageSlugs();
   return slugs.map(({ slug }) => ({ slug }));
@@ -39,6 +46,11 @@ export default async function ContentPage({
   return (
     <section className="content-page">
       <div className="wrap">
+        {SERVICE_SLUGS.has(slug) && (
+          <Link href="/uslugi" className="article-back-link">
+            ← Wróć do listy usług
+          </Link>
+        )}
         <div className="sec-head">
           {page.eyebrow && <span className="eyebrow">{page.eyebrow}</span>}
           <h1>{page.heading}</h1>
