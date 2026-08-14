@@ -4,7 +4,6 @@ import { getSearchConfigBase } from "./search-config";
 import { getProperties } from "./properties";
 import { getWhyUsContent } from "./why-us";
 import { getVipProgramContent } from "./vip-program";
-import { getTestimonials } from "./testimonials";
 import { getPowiatyList } from "./powiaty";
 import { getFooterContent } from "./footer";
 import { getServiceAreaContent } from "./service-area";
@@ -17,7 +16,6 @@ export async function getHomepageContent() {
     properties,
     whyUs,
     vip,
-    testimonials,
     powiaty,
     footer,
     serviceArea,
@@ -28,7 +26,6 @@ export async function getHomepageContent() {
     getProperties(),
     getWhyUsContent(),
     getVipProgramContent(),
-    getTestimonials(),
     getPowiatyList(),
     getFooterContent(),
     getServiceAreaContent(),
@@ -47,7 +44,6 @@ export async function getHomepageContent() {
     whyUs,
     vip,
     vipProperties: properties.filter((p) => p.status === "vip"),
-    testimonials,
     powiaty,
     footer,
     serviceArea,

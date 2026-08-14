@@ -1,6 +1,6 @@
-import type { Testimonial } from "@/content/testimonials";
+import { GoogleReviewsWidget } from "./GoogleReviewsWidget";
 
-export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) {
+export function Testimonials() {
   return (
     <section id="opinie">
       <div className="wrap">
@@ -8,21 +8,7 @@ export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) 
           <span className="eyebrow">Opinie klientów</span>
           <h2>Co mówią osoby, którym pomogliśmy</h2>
         </div>
-        <div className="testi-grid">
-          {testimonials.map((testimonial) => (
-            <div className="testi-card" key={testimonial.id}>
-              <div className="stars">{"★".repeat(testimonial.rating)}</div>
-              <p>{testimonial.quote}</p>
-              <div className="testi-who">
-                <div className="testi-avatar" />
-                <div>
-                  <strong>{testimonial.clientSignature}</strong>
-                  <span>{testimonial.location}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <GoogleReviewsWidget />
       </div>
     </section>
   );

@@ -20,7 +20,7 @@ export default async function Home() {
       <VipSection content={content.vip} vipProperties={content.vipProperties} />
       <WhyUs content={content.whyUs} />
       <CtaBand />
-      <Testimonials testimonials={content.testimonials} />
+      <Testimonials />
       <ServiceAreaRibbon content={content.serviceArea} powiaty={content.powiaty} />
     </>
   );
