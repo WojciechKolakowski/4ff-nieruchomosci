@@ -20,6 +20,15 @@
 html {
   scroll-behavior: smooth;
 }
+#oferty,
+#vip,
+#dlaczego,
+#opinie,
+#obszar,
+#kontakt,
+#lead {
+  scroll-margin-top: 112px;
+}
 body {
   font-family: var(--font-work-sans), sans-serif;
   color: var(--charcoal);
