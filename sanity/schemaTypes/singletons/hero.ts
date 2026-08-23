@@ -74,6 +74,8 @@ export const hero = defineType({
         { name: "namePlaceholder", title: "Placeholder: Imię i nazwisko", type: "string" },
         { name: "phoneLabel", title: "Etykieta pola: Telefon", type: "string" },
         { name: "phonePlaceholder", title: "Placeholder: Telefon", type: "string" },
+        { name: "emailLabel", title: "Etykieta pola: Email (opcjonalne)", type: "string" },
+        { name: "emailPlaceholder", title: "Placeholder: Email", type: "string" },
         { name: "interestLabel", title: "Etykieta pola: Czego szukasz?", type: "string" },
         {
           name: "interestOptions",

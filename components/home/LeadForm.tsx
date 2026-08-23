@@ -32,6 +32,7 @@ export function LeadForm({ content }: { content: LeadFormContent }) {
                   body: JSON.stringify({
                     name: data.get("name"),
                     phone: data.get("phone"),
+                    email: data.get("email"),
                     interest: data.get("interest"),
                     marketingConsent: data.get("marketingConsent") === "on",
                     consentRequired: data.get("consentRequired") === "on",
@@ -65,6 +66,10 @@ export function LeadForm({ content }: { content: LeadFormContent }) {
                 placeholder={content.phonePlaceholder}
                 required
               />
+            </div>
+            <div className="field">
+              <label htmlFor="email">{content.emailLabel}</label>
+              <input id="email" name="email" type="email" placeholder={content.emailPlaceholder} />
             </div>
             <div className="field">
               <label htmlFor="interest">{content.interestLabel}</label>

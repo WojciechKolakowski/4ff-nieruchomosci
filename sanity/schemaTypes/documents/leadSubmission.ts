@@ -7,6 +7,7 @@ export const leadSubmission = defineType({
   fields: [
     defineField({ name: "name", title: "Imię i nazwisko", type: "string" }),
     defineField({ name: "phone", title: "Telefon", type: "string" }),
+    defineField({ name: "email", title: "Email", type: "string" }),
     defineField({ name: "interest", title: "Czego dotyczy zapytanie", type: "string" }),
     defineField({
       name: "marketingConsent",

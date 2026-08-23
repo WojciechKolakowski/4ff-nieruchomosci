@@ -24,6 +24,8 @@ export interface LeadFormContent {
   namePlaceholder: string;
   phoneLabel: string;
   phonePlaceholder: string;
+  emailLabel: string;
+  emailPlaceholder: string;
   interestLabel: string;
   interestOptions: string[];
   consentRequiredLabel: string;
@@ -75,6 +77,8 @@ const query = groq`*[_type == "hero"][0]{
     "namePlaceholder": leadForm.namePlaceholder,
     "phoneLabel": leadForm.phoneLabel,
     "phonePlaceholder": leadForm.phonePlaceholder,
+    "emailLabel": leadForm.emailLabel,
+    "emailPlaceholder": leadForm.emailPlaceholder,
     "interestLabel": leadForm.interestLabel,
     "interestOptions": coalesce(leadForm.interestOptions, []),
     "consentRequiredLabel": leadForm.consentRequiredLabel,
