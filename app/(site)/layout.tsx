@@ -5,7 +5,6 @@ import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import { CookieConsentProvider } from "@/components/home/CookieConsentProvider";
 import { CookieBar } from "@/components/home/CookieBar";
-import { LoginModal } from "@/components/home/LoginModal";
 import { MetaPixel } from "@/components/home/MetaPixel";
 
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
@@ -20,7 +19,6 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       {children}
       <Footer global={global} content={footer} />
       <CookieBar content={footer} />
-      <LoginModal />
     </CookieConsentProvider>
   );
 }

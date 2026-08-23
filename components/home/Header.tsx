@@ -1,23 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { GlobalSettings } from "@/content/global-settings";
-import { OpenLoginModalButton } from "./OpenLoginModalButton";
 import { MobileNav } from "./MobileNav";
 
 // Older CMS data may still list the individual service pages as separate
 // nav entries; they now live under the single "Usługi" link below.
-const SERVICE_HREFS = new Set([
+// "/#vip" is filtered out because the VIP program (login + early-access
+// section) is paused until it has a working backend — see VipSection.
+const HIDDEN_HREFS = new Set([
   "/sprzedaz-nieruchomosci",
   "/zakup-nieruchomosci",
   "/finansowanie-kredyt",
   "/home-staging",
+  "/#vip",
 ]);
 
 export function Header({ global }: { global: GlobalSettings }) {
-  const { logo, navLinks, phone, loginButtonLabel, ctaValuationButtonLabel } = global;
+  const { logo, navLinks, phone, ctaValuationButtonLabel } = global;
   const [phonePrefix, ...rest] = phone.split(" ");
   const phoneNumber = rest.join(" ");
-  const [firstLink, ...restLinks] = navLinks.filter((link) => !SERVICE_HREFS.has(link.href));
+  const [firstLink, ...restLinks] = navLinks.filter((link) => !HIDDEN_HREFS.has(link.href));
   const uslugiLink = { label: "Usługi", href: "/uslugi" };
   const displayLinks = firstLink ? [firstLink, uslugiLink, ...restLinks] : [uslugiLink, ...restLinks];
 
@@ -46,9 +48,6 @@ export function Header({ global }: { global: GlobalSettings }) {
           <span className="phone-chip">
             {phonePrefix} <span>{phoneNumber}</span>
           </span>
-          <OpenLoginModalButton className="btn btn-outline">
-            {loginButtonLabel}
-          </OpenLoginModalButton>
           <Link href="/#lead" className="btn btn-gold">
             {ctaValuationButtonLabel}
           </Link>
