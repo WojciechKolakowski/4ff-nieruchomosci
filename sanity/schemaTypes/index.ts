@@ -13,6 +13,7 @@ import { testimonial } from "./documents/testimonial";
 import { powiat } from "./documents/powiat";
 import { page } from "./documents/page";
 import { article } from "./documents/article";
+import { leadSubmission } from "./documents/leadSubmission";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   link,
@@ -28,6 +29,7 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   powiat,
   page,
   article,
+  leadSubmission,
 ];
 
 export const singletonTypeNames = [
