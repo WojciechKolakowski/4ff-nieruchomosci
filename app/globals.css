@@ -339,7 +339,7 @@ nav a:hover {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: min(85vh, 720px);
+  height: min(88vh, 730px);
   min-height: 420px;
 }
 .carousel-track {
@@ -519,7 +519,7 @@ nav a:hover {
   order: 4;
   position: relative;
   z-index: 6;
-  padding: 14px 24px 20px;
+  padding: 10px 24px 12px;
 }
 .lead-card {
   position: relative;
@@ -605,7 +605,7 @@ nav a:hover {
     position: absolute;
     z-index: 6;
     top: 0;
-    height: min(85vh, 720px);
+    height: min(88vh, 730px);
     min-height: 420px;
     left: max(32px, calc((100% - 1180px) / 2 + 32px));
     width: min(480px, calc(58% - 60px));
@@ -618,12 +618,12 @@ nav a:hover {
     position: absolute;
     z-index: 6;
     top: 0;
-    height: min(85vh, 720px);
+    height: min(88vh, 730px);
     min-height: 420px;
     right: max(32px, calc((100% - 1180px) / 2 + 32px));
     display: flex;
     align-items: center;
-    padding: 60px 0 40px;
+    padding: 10px 0 12px;
   }
   .lead-card {
     margin: 0;
