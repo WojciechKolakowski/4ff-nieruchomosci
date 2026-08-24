@@ -20,6 +20,8 @@ export interface PropertyDetail {
   gallery: CmsImage[];
   metaItems: string[];
   description: PortableTextBlock[] | null;
+  agentName?: string;
+  agentPhone?: string;
 }
 
 const galleryProjection = groq`{
@@ -45,7 +47,9 @@ const query = groq`*[_type == "property" && slug.current == $slug && status == "
   highlightLabel,
   "gallery": coalesce(gallery[]${galleryProjection}, []),
   "metaItems": coalesce(metaItems, []),
-  "description": description
+  "description": description,
+  agentName,
+  agentPhone
 }`;
 
 export async function getPropertyBySlug(slug: string): Promise<PropertyDetail | null> {

@@ -107,6 +107,18 @@ export default async function PropertyDetailPage({
           <Link href="/#lead" className="btn btn-gold">
             Zapytaj o tę nieruchomość
           </Link>
+
+          {property.agentName && (
+            <div className="property-agent">
+              <span className="property-agent-label">Agent prowadzący</span>
+              <strong>{property.agentName}</strong>
+              {property.agentPhone && (
+                <a href={`tel:${property.agentPhone.replace(/\s+/g, "")}`}>
+                  {property.agentPhone}
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -85,6 +85,8 @@ export const property = defineType({
       type: "array",
       of: [{ type: "block" }],
     }),
+    defineField({ name: "agentName", title: "Agent — imię i nazwisko", type: "string" }),
+    defineField({ name: "agentPhone", title: "Agent — telefon", type: "string" }),
   ],
   preview: {
     select: { title: "title", subtitle: "status", media: "gallery.0" },
