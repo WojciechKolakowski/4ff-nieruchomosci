@@ -53,6 +53,9 @@ export default async function PropertyDetailPage({
   return (
     <section className="property-detail">
       <div className="wrap">
+        <Link href="/nieruchomosci" className="article-back-link">
+          ← Wróć do wszystkich ofert
+        </Link>
         <div className="property-gallery">
           <div
             className="property-gallery-main"
