@@ -1015,13 +1015,13 @@ section {
 }
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2px;
   background: rgba(247, 242, 230, 0.1);
 }
 .why-card {
   background: var(--olive-deep);
-  padding: 38px 30px;
+  padding: 38px 26px;
 }
 .why-card .num {
   font-family: var(--font-fraunces), serif;
@@ -1040,6 +1040,11 @@ section {
   font-size: 14.5px;
   line-height: 1.65;
   opacity: 0.9;
+}
+@media (max-width: 1180px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 920px) {
   .why-grid {

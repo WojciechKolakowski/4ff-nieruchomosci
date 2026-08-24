@@ -41,7 +41,7 @@ async function seed() {
       { _type: "link", _key: "nav4", label: "Kontakt", href: "#kontakt" },
     ],
     trustBarItems: [
-      { _type: "trustBarItem", _key: "trust0", icon: "☰", before: "Licencja pośrednika ", strong: "PFRN" },
+      { _type: "trustBarItem", _key: "trust0", icon: "☰", before: "Wysoki standard ", strong: "OBSŁUGI" },
       { _type: "trustBarItem", _key: "trust1", icon: "★", strong: "4,9/5", after: " średnia ocena klientów" },
       { _type: "trustBarItem", _key: "trust2", icon: "🔒", before: "Bezpieczeństwo prawne ", strong: "na każdym etapie" },
       { _type: "trustBarItem", _key: "trust3", icon: "⏰", before: "Kontakt ", strong: "7 dni w tygodniu" },
@@ -113,15 +113,15 @@ async function seed() {
     eyebrow: "Dlaczego 4FF",
     heading: "Rodzinne biuro, profesjonalne standardy",
     description:
-      "Łączymy osobiste zaangażowanie z pełnym, licencjonowanym zapleczem formalnym transakcji.",
+      "Łączymy osobiste zaangażowanie właścicieli firmy z pełnym, sprawdzonym zapleczem formalnym każdej transakcji.",
     cards: [
       {
         _type: "whyUsCard",
         _key: "c1",
         label: "Bezpieczeństwo",
-        title: "Pełny nadzór prawny",
+        title: "Pełny nadzór formalny",
         description:
-          "Licencja PFRN i współpraca ze sprawdzonymi notariuszami eliminują ryzyko formalne na każdym etapie transakcji.",
+          "Każdą transakcję prowadzimy we współpracy ze sprawdzonymi notariuszami i pod stałym nadzorem formalnym, eliminując ryzyko na każdym etapie procesu.",
       },
       {
         _type: "whyUsCard",
@@ -129,7 +129,7 @@ async function seed() {
         label: "Marketing",
         title: "Profesjonalna prezentacja",
         description:
-          "Sesje zdjęciowe, home staging i dedykowana strona dla każdej nieruchomości — sprzedajemy nie tylko metry, ale historię.",
+          "Sesje zdjęciowe, home staging i dedykowana podstrona dla każdej nieruchomości — sprzedajemy nie tylko metry, ale historię, która przyciąga właściwych kupujących.",
       },
       {
         _type: "whyUsCard",
@@ -137,7 +137,15 @@ async function seed() {
         label: "Wsparcie",
         title: "Kontakt bez pośpiechu",
         description:
-          "Jesteśmy dostępni 7 dni w tygodniu — od pierwszej rozmowy telefonicznej po klucze do nowego domu.",
+          "Jesteśmy dostępni 7 dni w tygodniu — od pierwszej rozmowy telefonicznej po klucze do nowego domu, zawsze z jedną osobą kontaktową po Twojej stronie.",
+      },
+      {
+        _type: "whyUsCard",
+        _key: "c4",
+        label: "Lokalnie",
+        title: "Znamy ten rynek od podszewki",
+        description:
+          "Działamy w Pabianicach i regionie łódzkim na co dzień — znamy lokalne ceny, dzielnice i tempo sprzedaży lepiej niż ogólnopolskie portale.",
       },
     ],
   });

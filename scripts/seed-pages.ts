@@ -39,7 +39,7 @@ async function run() {
         "Dalej bierzemy na siebie to, co najbardziej czasochłonne: profesjonalną sesję zdjęciową, home staging, przygotowanie oferty i jej promocję — także wśród naszych zalogowanych użytkowników programu 4FF VIP, którzy widzą nowe oferty 7 dni przed ich publiczną publikacją."
       ),
       paragraph(
-        "Na każdym etapie masz jedną osobę kontaktową, dostępną 7 dni w tygodniu. Negocjacje, weryfikacja kupującego, przygotowanie dokumentów i obecność przy akcie notarialnym — wszystko pod nadzorem prawnym, zgodnie z licencją pośrednika PFRN."
+        "Na każdym etapie masz jedną osobę kontaktową, dostępną 7 dni w tygodniu. Negocjacje, weryfikacja kupującego, przygotowanie dokumentów i obecność przy akcie notarialnym — wszystko pod stałym nadzorem formalnym."
       ),
     ],
     ctaLabel: "Umów bezpłatną konsultację",
