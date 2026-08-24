@@ -36,7 +36,7 @@ async function run() {
         "Sprzedaż nieruchomości zaczynamy od bezpłatnej, rzetelnej wyceny — bez naciągania w górę czy w dół, tylko realna cena rynkowa dopasowana do Twojej okolicy: czy to Powiat Pabianicki, Łódź, Powiat Łódzki Wschodni, Powiat Łaski czy Powiat Zgierski."
       ),
       paragraph(
-        "Dalej bierzemy na siebie to, co najbardziej czasochłonne: profesjonalną sesję zdjęciową, home staging, przygotowanie oferty i jej promocję — także wśród naszych zalogowanych użytkowników programu 4FF VIP, którzy widzą nowe oferty 7 dni przed ich publiczną publikacją."
+        "Dalej bierzemy na siebie to, co najbardziej czasochłonne: profesjonalną sesję zdjęciową, home staging, przygotowanie oferty i jej promocję, żeby jak najszybciej dotarła do właściwych kupujących."
       ),
       paragraph(
         "Na każdym etapie masz jedną osobę kontaktową, dostępną 7 dni w tygodniu. Negocjacje, weryfikacja kupującego, przygotowanie dokumentów i obecność przy akcie notarialnym — wszystko pod stałym nadzorem formalnym."
@@ -60,7 +60,7 @@ async function run() {
     lead: "Kupno nieruchomości to jedna z ważniejszych decyzji w życiu. Chcemy, żebyś podejmował/a ją ze spokojną głową, mając pełny obraz sytuacji prawnej i finansowej.",
     body: [
       paragraph(
-        "Zaczynamy od rozmowy o tym, czego naprawdę szukasz — lokalizacji, budżetu, typu nieruchomości. Przeszukujemy naszą bieżącą ofertę w powiatach: Pabianickim, Łódzkim Wschodnim, Łaskim, Zgierskim oraz w samej Łodzi, a dzięki programowi 4FF VIP masz dostęp do nowych ofert zanim trafią do internetu."
+        "Zaczynamy od rozmowy o tym, czego naprawdę szukasz — lokalizacji, budżetu, typu nieruchomości. Przeszukujemy naszą bieżącą ofertę w powiatach: Pabianickim, Łódzkim Wschodnim, Łaskim, Zgierskim oraz w samej Łodzi, żeby znaleźć coś, co faktycznie pasuje do Twoich potrzeb."
       ),
       paragraph(
         "Przy każdej nieruchomości sprawdzamy stan prawny — księgę wieczystą, obciążenia, zgodność z planem zagospodarowania. Jeśli interesuje Cię inwestycja na rynku pierwotnym, wyjaśniamy status prawny dewelopera i zabezpieczenia Twoich wpłat."
@@ -132,7 +132,7 @@ async function run() {
     slug: { _type: "slug", current: "polityka-prywatnosci" },
     metaTitle: "Polityka prywatności | 4FF Nieruchomości",
     metaDescription:
-      "Dowiedz się, jak 4FF Sp. z o.o. przetwarza Twoje dane osobowe zgodnie z RODO — w formularzu kontaktowym, koncie VIP i plikach cookies.",
+      "Dowiedz się, jak 4FF Sp. z o.o. przetwarza Twoje dane osobowe zgodnie z RODO — w formularzu kontaktowym i plikach cookies.",
     eyebrow: undefined,
     heading: "Polityka prywatności",
     lead: "Twoje dane traktujemy z taką samą odpowiedzialnością, z jaką prowadzimy Twoją transakcję.",
@@ -146,9 +146,6 @@ async function run() {
         "Obsługa zapytania z formularza „Bezpłatna wycena nieruchomości” i formularzy kontaktowych — podstawa: art. 6 ust. 1 lit. b RODO (działania przed zawarciem umowy) oraz lit. f (prawnie uzasadniony interes Administratora)."
       ),
       paragraph(
-        "Prowadzenie konta w programie 4FF VIP i udostępnianie wcześniejszego dostępu do ofert — podstawa: art. 6 ust. 1 lit. b RODO."
-      ),
-      paragraph(
         "Marketing bezpośredni (informacje o ofertach) — wyłącznie po wyrażeniu odrębnej, dobrowolnej zgody — podstawa: art. 6 ust. 1 lit. a RODO."
       ),
       paragraph(
@@ -156,7 +153,7 @@ async function run() {
       ),
       paragraph("3. Okres przechowywania danych", "h3"),
       paragraph(
-        "[DO WERYFIKACJI PRAWNEJ] Dane z zapytań ofertowych przechowujemy przez okres niezbędny do obsługi zapytania i okres przedawnienia ewentualnych roszczeń. Dane konta VIP — przez czas trwania konta, chyba że przepisy prawa (w tym AML) wymagają dłuższego okresu."
+        "[DO WERYFIKACJI PRAWNEJ] Dane z zapytań ofertowych przechowujemy przez okres niezbędny do obsługi zapytania i okres przedawnienia ewentualnych roszczeń."
       ),
       paragraph("4. Odbiorcy danych", "h3"),
       paragraph(
@@ -179,45 +176,35 @@ async function run() {
     _type: "page",
     title: "Regulamin",
     slug: { _type: "slug", current: "regulamin" },
-    metaTitle: "Regulamin serwisu i programu 4FF VIP | 4FF Nieruchomości",
-    metaDescription:
-      "Zasady korzystania z serwisu 4ffnieruchomosci.pl oraz programu wcześniejszego dostępu do ofert 4FF VIP.",
+    metaTitle: "Regulamin serwisu | 4FF Nieruchomości",
+    metaDescription: "Zasady korzystania z serwisu 4ffnieruchomosci.pl.",
     eyebrow: undefined,
     heading: "Regulamin serwisu",
     lead: "Krótko, jasno i bez drobnego druku — tak, jak lubimy prowadzić nasze transakcje.",
     body: [
       paragraph("§1 Postanowienia ogólne", "h3"),
       paragraph(
-        "Serwis 4ffnieruchomosci.pl prowadzony jest przez 4FF Sp. z o.o., NIP 731 207 91 33 („Usługodawca”). Regulamin określa zasady korzystania z serwisu, w tym z programu 4FF VIP."
+        "Serwis 4ffnieruchomosci.pl prowadzony jest przez 4FF Sp. z o.o., NIP 731 207 91 33 („Usługodawca”). Regulamin określa zasady korzystania z serwisu."
       ),
-      paragraph("§2 Definicje", "h3"),
-      paragraph(
-        "Konto — indywidualne konto Użytkownika w programie 4FF VIP. Program VIP — usługa polegająca na udostępnianiu zarejestrowanym Użytkownikom informacji o nowych ofertach nieruchomości przed ich publiczną publikacją."
-      ),
-      paragraph("§3 Zasady programu 4FF VIP", "h3"),
-      paragraph(
-        "Rejestracja konta jest bezpłatna i wymaga podania adresu e-mail oraz akceptacji niniejszego Regulaminu i Polityki prywatności."
-      ),
-      paragraph(
-        "[DO UZUPEŁNIENIA] Zalogowani Użytkownicy uzyskują dostęp do ofert oznaczonych statusem „VIP” — dokładna liczba dni wcześniejszego dostępu (strona wskazuje 7 dni) powinna zostać potwierdzona jako sztywna zasada dla każdej oferty."
-      ),
-      paragraph(
-        "Usługodawca zastrzega sobie prawo do zmiany statusu oferty z „VIP” na „publiczna” według własnego uznania i harmonogramu marketingowego."
-      ),
-      paragraph("§4 Odpowiedzialność", "h3"),
+      paragraph("§2 Odpowiedzialność", "h3"),
       paragraph(
         "Prezentowane na stronie ceny i dane ofert mają charakter informacyjny i nie stanowią oferty w rozumieniu Kodeksu cywilnego. Wiążące warunki transakcji ustalane są indywidualnie z agentem 4FF."
       ),
-      paragraph("§5 Reklamacje", "h3"),
+      paragraph("§3 Reklamacje", "h3"),
       paragraph(
         "Reklamacje dotyczące działania serwisu można zgłaszać na adres biuro@4ffnieruchomosci.pl. Usługodawca rozpatruje reklamacje w terminie 14 dni."
       ),
-      paragraph("§6 Postanowienia końcowe", "h3"),
+      paragraph("§4 Postanowienia końcowe", "h3"),
       paragraph(
         "W sprawach nieuregulowanych Regulaminem zastosowanie mają przepisy prawa polskiego, w tym Kodeksu cywilnego i ustawy o świadczeniu usług drogą elektroniczną."
       ),
     ],
   });
+  // NOTE: §2 Definicje (Konto/Program VIP) and the old §3 "Zasady programu
+  // 4FF VIP" were removed here because the VIP login program is paused
+  // (see components/home/VipSection.tsx). Re-add them, renumbering the
+  // sections that follow, once VIP is reactivated — original wording is in
+  // git history (commit that removed this block).
 
   console.log("Done.");
 }
