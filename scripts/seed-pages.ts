@@ -87,10 +87,10 @@ async function run() {
     lead: "Dobra nieruchomość to połowa sukcesu. Druga połowa to finansowanie dopasowane do Twojej sytuacji — chętnie pomożemy Ci to poukładać.",
     body: [
       paragraph(
-        "Wiemy, że formalności kredytowe bywają najbardziej stresującym etapem zakupu nieruchomości. Dlatego przy każdej transakcji, w której klient potrzebuje finansowania, wspieramy go w kontakcie z zaufanymi doradcami/pośrednikami kredytowymi, pomagając zrozumieć harmonogram, wymagane dokumenty i sposób powiązania wypłaty kredytu z etapami transakcji."
+        "Wiemy, że formalności kredytowe bywają najbardziej stresującym etapem zakupu nieruchomości. Dlatego pomagamy Ci przejść przez cały proces — od pierwszej rozmowy o zdolności kredytowej, przez wybór najlepszej oferty, po dopięcie formalności zgodnie z harmonogramem transakcji."
       ),
       paragraph(
-        "[DO WERYFIKACJI PRAWNEJ] Treść tej strony zakłada, że 4FF kieruje klientów do zewnętrznego, licencjonowanego pośrednika kredytowego. Jeśli usługa jest świadczona samodzielnie przez 4FF, wymaga to wpisu do rejestru pośredników kredytowych KNF — prosimy o potwierdzenie modelu współpracy."
+        "4FF Sp. z o.o. widnieje w rejestrze pośredników kredytowych prowadzonym przez Komisję Nadzoru Finansowego (numer wpisu RPH000896), co pozwala nam samodzielnie i w pełnej zgodności formalnej wspierać Cię w procesie finansowania. Przy większych transakcjach współpracujemy również z Lendi — jednym z największych pośredników kredytu hipotecznego w Polsce — żeby zapewnić dostęp do najszerszej oferty banków."
       ),
     ],
     ctaLabel: "Umów bezpłatną konsultację",
