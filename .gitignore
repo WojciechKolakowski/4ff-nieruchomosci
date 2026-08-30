@@ -43,3 +43,6 @@ next-env.d.ts
 
 # claude code (machine-local tooling config)
 .claude/
+
+# unrelated project living in this folder — not part of this site
+/Mroczne-Ostrza/
