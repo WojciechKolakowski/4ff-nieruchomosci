@@ -117,7 +117,7 @@ async function run() {
         "Usługę home stagingu łączymy zawsze z profesjonalną sesją zdjęciową — to pakiet, który oferujemy w ramach przygotowania oferty do sprzedaży. Dotyczy to zarówno domów i mieszkań na rynku wtórnym, jak i lokali pokazowych przy inwestycjach na rynku pierwotnym."
       ),
       paragraph(
-        "[DO WERYFIKACJI PRAWNEJ] Treść zakłada model, w którym home staging jest usługą 4FF lub realizowaną przez polecanego partnera — prosimy o potwierdzenie przed publikacją."
+        "Home staging nie jest u nas usługą do samodzielnego zakupu — oferujemy go wyłącznie jako element pełnej współpracy przy sprzedaży nieruchomości, w ramach podpisanej z nami umowy pośrednictwa. To świadomy wybór, nie ograniczenie: dzięki temu dopasowujemy zakres stagingu do konkretnej oferty i poświęcamy mu tyle uwagi, na ile zasługuje. Efekt — Twoja nieruchomość trafia do wąskiego grona ofert przygotowanych i zaprezentowanych na poziomie, jakiego na rynku próżno szukać gdzie indziej."
       ),
     ],
     ctaLabel: "Umów bezpłatną konsultację",
