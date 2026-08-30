@@ -141,6 +141,7 @@ nav a:hover {
   font-weight: 600;
   opacity: 0.9;
   white-space: nowrap;
+  text-decoration: none;
 }
 .phone-chip span {
   color: var(--gold);

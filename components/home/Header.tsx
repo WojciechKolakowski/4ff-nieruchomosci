@@ -45,9 +45,9 @@ export function Header({ global }: { global: GlobalSettings }) {
           </ul>
         </nav>
         <div className="nav-cta">
-          <span className="phone-chip">
+          <a href={`tel:${phone.replace(/\s+/g, "")}`} className="phone-chip">
             {phonePrefix} <span>{phoneNumber}</span>
-          </span>
+          </a>
           <Link href="/#lead" className="btn btn-gold">
             {ctaValuationButtonLabel}
           </Link>
