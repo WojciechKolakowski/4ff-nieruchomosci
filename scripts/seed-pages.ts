@@ -90,7 +90,7 @@ async function run() {
         "Wiemy, że formalności kredytowe bywają najbardziej stresującym etapem zakupu nieruchomości. Dlatego pomagamy Ci przejść przez cały proces — od pierwszej rozmowy o zdolności kredytowej, przez wybór najlepszej oferty, po dopięcie formalności zgodnie z harmonogramem transakcji."
       ),
       paragraph(
-        "4FF Sp. z o.o. widnieje w rejestrze pośredników kredytowych prowadzonym przez Komisję Nadzoru Finansowego (numer wpisu RPH000896), co pozwala nam samodzielnie i w pełnej zgodności formalnej wspierać Cię w procesie finansowania. Przy większych transakcjach współpracujemy również z Lendi — jednym z największych pośredników kredytu hipotecznego w Polsce — żeby zapewnić dostęp do najszerszej oferty banków."
+        "Jesteśmy zarejestrowanym agentem firmy Lendi — jednego z największych pośredników kredytu hipotecznego w Polsce, wpisanego do rejestru pośredników kredytowych prowadzonego przez Komisję Nadzoru Finansowego pod numerem RPH000896 (nasz numer agenta: RHA0018297). W każdej transakcji współpracujemy wyłącznie z Lendi — to gwarantuje pełen profesjonalizm i bezpieczeństwo formalne na każdym etapie procesu kredytowego."
       ),
     ],
     ctaLabel: "Umów bezpłatną konsultację",
