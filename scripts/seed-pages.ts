@@ -149,11 +149,11 @@ async function run() {
         "Marketing bezpośredni (informacje o ofertach) — wyłącznie po wyrażeniu odrębnej, dobrowolnej zgody — podstawa: art. 6 ust. 1 lit. a RODO."
       ),
       paragraph(
-        "[DO WERYFIKACJI PRAWNEJ] Wypełnienie obowiązków wynikających z przepisów o przeciwdziałaniu praniu pieniędzy (AML) w zakresie, w jakim mają zastosowanie do pośrednictwa w obrocie nieruchomościami — podstawa: art. 6 ust. 1 lit. c RODO. Dokładny zakres i okres retencji danych AML powinien potwierdzić prawnik/compliance."
+        "Wypełnienie obowiązków wynikających z ustawy o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (AML) — jako instytucja obowiązana w rozumieniu tej ustawy, weryfikujemy tożsamość klientów przy transakcjach o wartości równej lub przekraczającej równowartość 15 000 euro — podstawa: art. 6 ust. 1 lit. c RODO."
       ),
       paragraph("3. Okres przechowywania danych", "h3"),
       paragraph(
-        "[DO WERYFIKACJI PRAWNEJ] Dane z zapytań ofertowych przechowujemy przez okres niezbędny do obsługi zapytania i okres przedawnienia ewentualnych roszczeń."
+        "Dane z zapytań ofertowych osób, które nie zostały naszymi klientami, przechowujemy przez 12 miesięcy od ostatniego kontaktu. Dane przetwarzane w związku z obowiązkami AML (dotyczące klientów objętych weryfikacją przy transakcjach o wartości równej lub przekraczającej równowartość 15 000 euro) przechowujemy przez 5 lat, zgodnie z ustawą o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu."
       ),
       paragraph("4. Odbiorcy danych", "h3"),
       paragraph(
