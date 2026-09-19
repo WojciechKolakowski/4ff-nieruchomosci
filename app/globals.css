@@ -1304,6 +1304,9 @@ footer {
 .foot-bottom a:hover {
   color: var(--gold);
 }
+.foot-bottom a.foot-internal {
+  opacity: 0.65;
+}
 .foot-cookie-settings {
   color: rgba(247, 242, 230, 0.55);
   margin-left: 18px;

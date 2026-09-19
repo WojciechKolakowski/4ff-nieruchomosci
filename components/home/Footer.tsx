@@ -84,6 +84,10 @@ export function Footer({
                 </Link>
               )
             )}
+            {/* Internal, password-protected page for the office (noindex, not in the sitemap). */}
+            <Link href="/klauzula-rodo" rel="nofollow" prefetch={false} className="foot-internal">
+              Klauzula RODO
+            </Link>
           </span>
         </div>
       </div>
