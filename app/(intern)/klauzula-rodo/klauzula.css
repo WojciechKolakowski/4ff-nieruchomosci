@@ -28,6 +28,9 @@ h2[tabindex="-1"]:focus {
 
 /* ── Header ─────────────────────────────────────────────────────────── */
 .kl-header {
+  /* Neutralise the public site's global <header> rule (sticky bar). */
+  position: static;
+  z-index: auto;
   background: var(--olive-deep);
   color: var(--cream);
   border-bottom: 3px solid var(--gold);

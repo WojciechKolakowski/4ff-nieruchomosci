@@ -93,6 +93,10 @@ describe.each(Object.values(VERSIONS))("klauzula RODO $label", (version) => {
       </>
     );
 
+    // The public site styles <header>/<section>/<footer> elements globally
+    // (app/globals.css); the clause components must not use them.
+    expect(html).not.toMatch(/<(header|footer|section|nav)[\s>]/);
+
     const viewText = normalize(decodeEntities(html.replace(/<[^>]*>/g, "")));
     const pdfText = normalize(
       await templateText(

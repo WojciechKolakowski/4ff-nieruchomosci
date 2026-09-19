@@ -98,14 +98,16 @@ export function Acknowledgement({ content }: { content: Content }) {
 
 /** Title, subtitle and intro of the marketing-consent page. */
 export function ConsentHeader({ content }: { content: Content }) {
+  // A <div>, not <header>: the public site styles every <header> element
+  // globally (green sticky bar), which would leak into this block.
   return (
-    <header className="kl-consent-head">
+    <div className="kl-consent-head">
       <h2 className="kl-doc-title">{content.consent.title}</h2>
       <p className="kl-doc-subtitle">
         <em>{content.consent.subtitle}</em>
       </p>
       <p>{content.consent.intro}</p>
-    </header>
+    </div>
   );
 }
 
