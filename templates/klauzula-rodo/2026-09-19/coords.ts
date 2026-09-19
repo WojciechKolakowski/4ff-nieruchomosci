@@ -33,7 +33,7 @@ export const coords = {
     // "Imię i nazwisko:" label ends at x≈118; the dotted leader runs to
     // x≈294.6 at baseline 576.9. Name may wrap to a 2nd line (nothing below
     // it until the signature line at y=551, which starts at x=362.83).
-    name: { x: 122, baseline: 578.4, maxWidth: 228, maxFont: 11, minFont: 7.5, lineHeight: 11 },
+    name: { x: 122, baseline: 579.6, maxWidth: 228, maxFont: 11, minFont: 7.5, lineHeight: 11 },
     // Signature line printed by the template: x 362.83–538.58, y 551.33.
     // Area above it is empty (channel labels end at x=205).
     signature: { x: 364, y: 553.5, w: 174, h: 58 } satisfies Box,

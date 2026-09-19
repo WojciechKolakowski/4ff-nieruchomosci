@@ -45,7 +45,7 @@ function decodeEntities(html: string): string {
 
 async function templateText(file: string): Promise<string> {
   const data = new Uint8Array(readFileSync(file));
-  const pdf = await getDocument({ data, verbosity: 0, isEvalSupported: false }).promise;
+  const pdf = await getDocument({ data, verbosity: 0 }).promise;
   const parts: string[] = [];
   for (let pageNo = 1; pageNo <= pdf.numPages; pageNo++) {
     const page = await pdf.getPage(pageNo);
@@ -114,7 +114,7 @@ describe.each(Object.values(VERSIONS))("klauzula RODO $label", (version) => {
         path.join(process.cwd(), "templates/klauzula-rodo", version.id, version.templateFile)
       )
     );
-    const pdf = await getDocument({ data, verbosity: 0, isEvalSupported: false }).promise;
+    const pdf = await getDocument({ data, verbosity: 0 }).promise;
     expect(pdf.numPages).toBe(3);
     for (let pageNo = 1; pageNo <= pdf.numPages; pageNo++) {
       const page = await pdf.getPage(pageNo);
