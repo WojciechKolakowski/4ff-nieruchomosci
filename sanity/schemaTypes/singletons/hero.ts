@@ -94,6 +94,13 @@ export const hero = defineType({
           type: "text",
         },
         { name: "submitButtonLabel", title: "Tekst przycisku wysyłki", type: "string" },
+        {
+          name: "valuationDisclaimer",
+          title: "Zastrzeżenie: analiza cenowa a operat szacunkowy",
+          description:
+            "Krótka notka nad notą RODO, tym samym stylem — zastrzegająca, że nie jesteśmy rzeczoznawcami majątkowymi.",
+          type: "text",
+        },
         { name: "rodoNote", title: "Nota RODO", type: "text" },
       ],
     }),

@@ -31,6 +31,8 @@ export interface LeadFormContent {
   consentRequiredLabel: string;
   consentMarketingLabel: string;
   submitButtonLabel: string;
+  /** Optional: shown above rodoNote, same small/gray style. Not yet set in the CMS. */
+  valuationDisclaimer?: string;
   rodoNote: string;
 }
 
@@ -84,6 +86,7 @@ const query = groq`*[_type == "hero"][0]{
     "consentRequiredLabel": leadForm.consentRequiredLabel,
     "consentMarketingLabel": leadForm.consentMarketingLabel,
     "submitButtonLabel": leadForm.submitButtonLabel,
+    "valuationDisclaimer": leadForm.valuationDisclaimer,
     "rodoNote": leadForm.rodoNote
   }
 }`;

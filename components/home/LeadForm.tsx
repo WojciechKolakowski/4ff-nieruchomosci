@@ -95,6 +95,9 @@ export function LeadForm({ content }: { content: LeadFormContent }) {
                 Coś poszło nie tak. Spróbuj ponownie lub zadzwoń do nas bezpośrednio.
               </p>
             )}
+            {content.valuationDisclaimer && (
+              <p className="rodo-note">{content.valuationDisclaimer}</p>
+            )}
             <p className="rodo-note">{content.rodoNote}</p>
           </form>
         )}

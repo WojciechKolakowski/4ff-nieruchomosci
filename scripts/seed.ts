@@ -31,7 +31,7 @@ async function seed() {
     email: "biuro@4ffnieruchomosci.pl",
     officeAddress: "4FF Sp. z o.o. · NIP 731 207 91 33",
     socialLinks: { facebook: "https://facebook.com", instagram: "https://instagram.com", youtube: "https://youtube.com" },
-    ctaValuationButtonLabel: "Bezpłatna wycena",
+    ctaValuationButtonLabel: "Bezpłatna konsultacja",
     loginButtonLabel: "Zaloguj się",
     navLinks: [
       { _type: "link", _key: "nav0", label: "Nieruchomości", href: "#oferty" },
@@ -72,8 +72,9 @@ async function seed() {
       { _type: "heroSlide", _key: "s4", type: "image", tag: "Rynek wtórny" },
     ],
     leadForm: {
-      heading: "Bezpłatna wycena nieruchomości",
-      subheading: "Odezwiemy się w ciągu 24h z realną wyceną i planem działania.",
+      heading: "Sprawdź, za ile możesz sprzedać swoją nieruchomość",
+      subheading:
+        "Odezwiemy się w ciągu 24h z propozycją realnej ceny transakcyjnej i planem sprzedaży.",
       nameLabel: "Imię i nazwisko",
       namePlaceholder: "Jan Kowalski",
       phoneLabel: "Telefon",
@@ -82,13 +83,15 @@ async function seed() {
       interestOptions: [
         "Chcę sprzedać nieruchomość",
         "Chcę kupić nieruchomość",
-        "Wycena / konsultacja",
+        "Bezpłatna konsultacja",
       ],
       consentRequiredLabel:
         "Wyrażam zgodę na przetwarzanie danych osobowych w celu kontaktu w sprawie zapytania (wymagane). Zapoznałem się z Polityką prywatności.",
       consentMarketingLabel:
         "Chcę otrzymywać oferty i informacje marketingowe drogą elektroniczną (opcjonalnie).",
       submitButtonLabel: "Wyślij zapytanie",
+      valuationDisclaimer:
+        "Analiza cenowa nie jest operatem szacunkowym w rozumieniu ustawy o gospodarce nieruchomościami. Jeśli potrzebujesz operatu, np. do banku lub sądu, polecimy rzeczoznawcę majątkowego.",
       rodoNote:
         "Administratorem danych jest 4FF Sp. z o.o. Dane przetwarzane są zgodnie z RODO wyłącznie w celu obsługi zapytania i nie są udostępniane podmiotom trzecim bez Twojej zgody.",
     },

@@ -102,12 +102,16 @@ const articles = [
         "Jedno z najczęstszych pytań, jakie słyszymy: 'sąsiad sprzedał za tyle, to ja chyba też tyle dostanę?'. Odpowiedź prawie zawsze brzmi: to zależy od znacznie więcej czynników, niż się wydaje."
       ),
       ...tip(
+        "Wycena a analiza cenowa — to nie to samo",
+        "Zgodnie z art. 198 ustawy o gospodarce nieruchomościami wycenę nieruchomości — czyli sporządzenie operatu szacunkowego — może wykonać wyłącznie uprawniony rzeczoznawca majątkowy. Operat to sformalizowany dokument, potrzebny np. przy kredycie hipotecznym, podziale majątku czy w sądzie. To, o czym piszemy w tym artykule i co proponujemy jako biuro nieruchomości, to co innego: oszacowanie realnej ceny transakcyjnej na podstawie znajomości lokalnego rynku i faktycznych cen sprzedaży w okolicy — pomocne przy ustalaniu ceny ofertowej, ale niebędące operatem szacunkowym ani dokumentem urzędowym."
+      ),
+      ...tip(
         "Metraż to dopiero początek",
         "Cena za m² potrafi się różnić nawet w obrębie jednej ulicy — piętro, strona świata, układ pomieszczeń, stan instalacji czy rok budowy realnie wpływają na wartość, nawet jeśli metraż jest identyczny."
       ),
       ...tip(
         "Ceny ofertowe to nie ceny transakcyjne",
-        "Ogłoszenia w internecie pokazują, za ile ktoś CHCE sprzedać — nie za ile faktycznie sprzedał. Rzetelna wycena bazuje na realnych cenach transakcyjnych z okolicy, nie na życzeniach innych sprzedających."
+        "Ogłoszenia w internecie pokazują, za ile ktoś CHCE sprzedać — nie za ile faktycznie sprzedał. Rzetelne oszacowanie ceny bazuje na realnych cenach transakcyjnych z okolicy, nie na życzeniach innych sprzedających."
       ),
       ...tip(
         "Stan prawny ma swoją cenę",
@@ -118,7 +122,7 @@ const articles = [
         "Nowa linia tramwajowa, planowana inwestycja, zmiana w miejscowym planie zagospodarowania — to wszystko może podnieść albo obniżyć wartość nieruchomości w ciągu kilku miesięcy."
       ),
       paragraph(
-        "Dlatego zamiast zgadywać, warto zacząć od bezpłatnej, rzetelnej wyceny — bez naciągania w górę czy w dół, tylko realna cena rynkowa dopasowana do konkretnej nieruchomości i okolicy."
+        "Dlatego zamiast zgadywać, warto zacząć od bezpłatnej, rzetelnej analizy cenowej — bez naciągania w górę czy w dół, tylko realna cena rynkowa dopasowana do konkretnej nieruchomości i okolicy."
       ),
     ],
   },
