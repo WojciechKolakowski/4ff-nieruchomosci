@@ -33,7 +33,7 @@ async function run() {
     lead: "Twój dom to nie tylko metry kwadratowe — to Twoja historia. Prowadzimy Cię przez cały proces sprzedaży tak, żebyś nie musiał/a martwić się o żadną formalność.",
     body: [
       paragraph(
-        "Sprzedaż nieruchomości zaczynamy od bezpłatnej, rzetelnej analizy cenowej — bez naciągania w górę czy w dół, tylko realna cena rynkowa dopasowana do Twojej okolicy: czy to Powiat Pabianicki, Łódź, Powiat Łódzki Wschodni, Powiat Łaski czy Powiat Zgierski."
+        "Sprzedaż nieruchomości zaczynamy od bezpłatnej, rzetelnej analizy cenowej — bez naciągania w górę czy w dół, tylko realna cena rynkowa dopasowana do Twojej okolicy: czy to Powiat Pabianicki, Łódź, Powiat Łódzki Wschodni, Powiat Łaski, Powiat Zgierski."
       ),
       paragraph(
         "Dalej bierzemy na siebie to, co najbardziej czasochłonne: profesjonalną sesję zdjęciową, home staging, przygotowanie oferty i jej promocję, żeby jak najszybciej dotarła do właściwych kupujących."
