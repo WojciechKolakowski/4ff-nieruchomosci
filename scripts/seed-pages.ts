@@ -27,13 +27,13 @@ async function run() {
     slug: { _type: "slug", current: "sprzedaz-nieruchomosci" },
     metaTitle: "Sprzedaż nieruchomości Łódź i okolice | 4FF Nieruchomości",
     metaDescription:
-      "Sprzedajesz dom, mieszkanie lub działkę? Bezpłatna wycena, pełna obsługa prawna i marketingowa od pierwszego kontaktu po akt notarialny. Umów rozmowę.",
+      "Sprzedajesz dom, mieszkanie lub działkę? Bezpłatna analiza cenowa, pełna obsługa prawna i marketingowa od pierwszego kontaktu po akt notarialny. Umów rozmowę.",
     eyebrow: "Nasze usługi",
-    heading: "Sprzedaż nieruchomości — od wyceny po klucze w rękach kupującego",
+    heading: "Sprzedaż nieruchomości — od pierwszej rozmowy po klucze w rękach kupującego",
     lead: "Twój dom to nie tylko metry kwadratowe — to Twoja historia. Prowadzimy Cię przez cały proces sprzedaży tak, żebyś nie musiał/a martwić się o żadną formalność.",
     body: [
       paragraph(
-        "Sprzedaż nieruchomości zaczynamy od bezpłatnej, rzetelnej wyceny — bez naciągania w górę czy w dół, tylko realna cena rynkowa dopasowana do Twojej okolicy: czy to Powiat Pabianicki, Łódź, Powiat Łódzki Wschodni, Powiat Łaski czy Powiat Zgierski."
+        "Sprzedaż nieruchomości zaczynamy od bezpłatnej, rzetelnej analizy cenowej — bez naciągania w górę czy w dół, tylko realna cena rynkowa dopasowana do Twojej okolicy: czy to Powiat Pabianicki, Łódź, Powiat Łódzki Wschodni, Powiat Łaski czy Powiat Zgierski."
       ),
       paragraph(
         "Dalej bierzemy na siebie to, co najbardziej czasochłonne: profesjonalną sesję zdjęciową, home staging, przygotowanie oferty i jej promocję, żeby jak najszybciej dotarła do właściwych kupujących."
@@ -143,7 +143,7 @@ async function run() {
       ),
       paragraph("2. Cele i podstawy przetwarzania", "h3"),
       paragraph(
-        "Obsługa zapytania z formularza „Bezpłatna wycena nieruchomości” i formularzy kontaktowych — podstawa: art. 6 ust. 1 lit. b RODO (działania przed zawarciem umowy) oraz lit. f (prawnie uzasadniony interes Administratora)."
+        "Obsługa zapytania z formularza kontaktowego na stronie głównej oraz innych formularzy kontaktowych na stronie — podstawa: art. 6 ust. 1 lit. b RODO (działania przed zawarciem umowy) oraz lit. f (prawnie uzasadniony interes Administratora)."
       ),
       paragraph(
         "Marketing bezpośredni (informacje o ofertach) — wyłącznie po wyrażeniu odrębnej, dobrowolnej zgody — podstawa: art. 6 ust. 1 lit. a RODO."

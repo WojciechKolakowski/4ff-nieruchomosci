@@ -34,7 +34,7 @@ export const globalSettings = defineType({
     }),
     defineField({
       name: "ctaValuationButtonLabel",
-      title: 'Tekst przycisku „Bezpłatna wycena"',
+      title: 'Tekst przycisku „Bezpłatna konsultacja"',
       type: "string",
     }),
     defineField({
