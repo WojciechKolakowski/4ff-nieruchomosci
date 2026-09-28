@@ -84,6 +84,10 @@ const articles = [
       paragraph(
         "Jeśli wolisz, żeby ktoś przeprowadził Cię przez to wszystko krok po kroku — od wyceny po klucze w rękach kupującego — chętnie pomożemy."
       ),
+      ...tip(
+        "Zastrzeżenie: to nie jest wycena w rozumieniu prawa",
+        "Profesjonalna wycena nieruchomości — czyli operat szacunkowy — może zostać sporządzona wyłącznie przez uprawnionego rzeczoznawcę majątkowego, zgodnie z art. 198 ustawy o gospodarce nieruchomościami. To sformalizowany dokument, wymagany np. przy kredycie hipotecznym, podziale majątku czy w sądzie. Nie jesteśmy rzeczoznawcami majątkowymi, więc nie wykonujemy wycen ani nie szacujemy wartości nieruchomości w tym rozumieniu. Wspomniana w tym artykule „wycena” to potoczne określenie czegoś innego: naszego oszacowania, za jaką cenę dana nieruchomość może realnie i sprawnie się sprzedać na obecnym rynku — opartego na znajomości lokalnego rynku i faktycznych transakcjach w okolicy, a nie na formalnej metodologii wyceny."
+      ),
     ],
   },
   {
@@ -160,6 +164,10 @@ const articles = [
       ),
       paragraph(
         "Dla nas klienci z mniejszych miast to nie 'dodatek' do rynku łódzkiego — to jego pełnoprawna, ważna część, którą znamy równie dobrze."
+      ),
+      ...tip(
+        "Zastrzeżenie: to nie jest wycena w rozumieniu prawa",
+        "Profesjonalna wycena nieruchomości — czyli operat szacunkowy — może zostać sporządzona wyłącznie przez uprawnionego rzeczoznawcę majątkowego, zgodnie z art. 198 ustawy o gospodarce nieruchomościami. To sformalizowany dokument, wymagany np. przy kredycie hipotecznym, podziale majątku czy w sądzie. Nie jesteśmy rzeczoznawcami majątkowymi, więc nie wykonujemy wycen ani nie szacujemy wartości nieruchomości w tym rozumieniu. Wspomniana w tym artykule „wycena” to potoczne określenie czegoś innego: naszego oszacowania, za jaką cenę dana nieruchomość może realnie i sprawnie się sprzedać na obecnym rynku — opartego na znajomości lokalnego rynku i faktycznych transakcjach w okolicy, a nie na formalnej metodologii wyceny."
       ),
     ],
   },
